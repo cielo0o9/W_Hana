@@ -1,0 +1,24 @@
+body{width: 200px; margin: 200px auto;}
+
+div{
+    width: 200px; position: relative; animation-name: rotate3D; animation-iteration-count: infinite;
+    animation-duration: 2s; animation-timing-function: ease-out; transform-style: preserve-3d;
+}
+
+div span{
+    width: 200px; height: 100px; position: absolute; left: 0; top: 0; opacity: 0.3;
+}
+
+div :nth-child(1){background-color: red; animation-name: rotate3D;}
+div :nth-child(2){background-color: green; animation-name: rotate3D; transform: rotateY(60deg); transform-origin: left top;}
+div :nth-child(3){background-color: blue; animation-name: rotate3D;  transform: rotateY(-60deg); transform-origin: right top;}
+
+@keyframes rotate3D{
+    0%{
+        transform: rotate3d(0,0,0,0deg); 
+    }
+    100%{
+        transform: rotate3d(1,1,1,360deg);
+    }
+}
+

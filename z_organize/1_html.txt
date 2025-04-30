@@ -1,0 +1,215 @@
+[step_1]
+
+  > 1_H {heading - 제목}
+    - <h1>: Logo
+    - <h2>: phragraph Title
+    - <h3>: subDescription Title
+    - <h4> ~ <h6>: description Title
+
+  > 2_P {paragraph(문단), 문자 style tag}
+    - <p>
+    - <br> : 줄바꿈
+      + 웹 브라우저 사이즈의 압박을 받을 경우 부자연스러운 구조가 되기 때문에 사용 지양
+    - <b>/<strong> : 진하게 (스마트 리더기 강세 차이)
+    - <i>/<em> : 기울기 (스마트 리더기 성조 차이)
+      + emphasozed 약자. 외국어나 분류적 성격을 띄는 단어나, 전문기술용어, 손글씨 등처럼 다른 text와는 별도로 구분되는 text에 사용
+    - <mark> : 형광펜 같은 시각적 강조
+    - <sup>/<sub> : 위/아래 첨자
+    - <s> : 취소선(단순 line through) 삭제의 의미를 갖지 못함
+    - <del> : 취소선. 실제 data 상의 삭제를 의미
+    - <u> : 강조의 의미를 갖지 않는 단순 밑줄
+    - <small>/<big> : 일부를 작게/크게 
+    - <kbd> : 키보드 활자 표현 (추후 js와 연동시 click 단축키 구현 가능) / 비중요
+    - <code> : 코드 작성(번역 영향 안 받음) / 비중요
+    - <samp> : 주로 컴퓨터 프로그램의 출력 결과를 표현하는 데 활용 / 비중요
+    - <hr> : 선 (위 아래 주제가 바뀐다는 데 의미를 둠) / 비사용 권고 => css가 대체
+    - <blockquote>/<q> : 각각 block ,inline 속성의 인용문
+    - <pre> : code 작성한 걸 특수문자 제한 없이 그대로 표현
+
+[step_2]
+
+  > 1_list {list Tag's}
+    - <ul> : 번호 없는 목록 / display: block
+    - <li type="circle"> : display: list-item
+    - <li type="disc"> : default 상태
+    - <li type="square">
+    - <ol> : 번호 있는 목록 / display: block
+    - <li type="A">
+    - <li type="a">
+    - <li type="I">
+    - <li type="i">
+    - <li type="decimal">
+    - <dl> : 정의 목록
+    - <dt> : 정의할 단어
+    - <dd> : 정의할 단어에 대한 설명
+
+  > 2_img {img tag}
+    - <img src="https://placehold.co/150" alt="임시 이미지 공간">
+    + alt(alternate Text) :시각 장애인들에게 사진 정보를 전달하기 위함. 최대 자수는 255자 권장. 이상 초과될 때는 figure / figcaption 으로 사용할 것 
+
+  > 3_video, audio {video, audio Tag's}
+    - <iframe> : 특정 웹페이지를 현재 페이지 안에 삽입할 때 사용
+      + css 스타일링에도 유연하고 보안 설정이 가능해서 더 많이 쓰임
+      + youtube 영상 불러오기: 공유 > 퍼가기 > 코드 복사
+    - <embed> : video, audio 등 다양한 외부 콘텐츠를 삽일할 때 사용
+    - <video>
+      + <video poster=""> : 썸네일 / 영상이 재생되지 않을 때 나오는 이미지(로딩 양해 이미지)
+      + <video width="" height=""> : video 영역의 크기 지정 
+      + <video autoplay> : 자동 재생
+      + <video loop> : 반복 재생 
+      + <video controls> : 재생 영역에 제어 버튼 활성화
+      + <video muted> : 음소거 속성. 자동 재생 소리 제어
+      + <video preload> : 페이지가 로드될 때 미디어 파일을 얼마나 미리 불러올지 지정하는 것
+    - <source> : 요소 내부에서 여러 개의 미디어 파일을 지정할 때 사용 
+      + 비디오 화질 변환 가능(video tag 내부에서 여러 해상도를 제공하여 최적의 것 선택)
+    - <audio> : video 속성과 대부분 동일
+
+[step_3]
+
+  > 1_hyperlink {Hyper link} @
+    - <a href="">
+      + <a href="" target="_self"> : 이동 기능 / a의 target default
+      + <a href="" target="_blank"> : 이동 기능 / 웹 페이지를 분리 시킴
+      + <a href="../step2.zip"> : 상대 경로를 넣으면 파일을 다운로드 받을 수 있음
+      + <a href="mailto:이메일/subject="> : 메일 보내는 창이 뜨며 subject로 제목 지정
+      + <a href="tel:+821049659751"> : 전화 걸기
+      + <a href="#targetAnchor"> : id를 지정해 목표 지점 바로 가기 
+
+  > 2_namedAnchor {namedAnchor}
+    - <ul>, <li>, <a> tag와 id를 통해 슬라이더 느낌의 페이지 바로가기 구현 
+
+[step_4]
+
+  > 1_table {table} 
+    - <table> : 표 선언의 의미
+    - <caption> : 표의 제목 
+    - <colgroup> : 열 그룹
+    - <thead> : 표의 header 부분을 정의 
+    - <tfoot> : 표의 footer 부분을 정의 (합계 등) thead의 바로 다음 작성
+    - <tbody> : 표의 본문(실제 데이터 등)을 정의 
+    - <th> : 머리글 셀을 정의(기본적으로 굵은 글씨 + 가운데 정렬)
+    - <tr> : table row 하나의 행. 가로줄을 만듦
+    - <td> : table data 하나의 열. 일반적인 데이터 셀을 의미
+
+  > 2_table_span {colspan, rowspan}
+    - <td colspan="2"> : 열을 2만큼 병합
+    - <td rowspan="3"> : 행을 3만큼 병합
+
+  > 3_table_spanHW {table_spanHW}
+
+[step_5]
+
+  > 1_form {form Tag's}
+    - <form>: input 내 사용자 데이터들을 담아서 서버로 전송 / 추상적인 공간
+    - <fieldset>: 폼 요소들을 그룹화할 때 사용 (서로 다른 두 개 이상의 data group이 존재할 때 물리적 공간 구분 용도로 사용) / 실제 공간
+    - <legend>: 분리된 fieldset group 주제에 맞는 이름을 적는 tag(필수x)
+    - <label>: 웹접근성 측면에서 항상 <input> tag와 한 쌍으로 써야함
+    > HTML4 input's
+      - <input type="text">: 전 세계 모든 문자 입력 가능(문자, 특수문자, 숫자 등) 
+      - <input type="password">: 실질적인 암호화 처리가 된 데이터
+      - <input type="radio" name="radioGroup">: or 개념. name attr을 통해 grouping을 사용하여 여러 선택지 중 하나만 선택 가능하게 함 
+      - <input type="checkbox" checked>: and 개념. 다중 선택을 지원하는 입력 tag
+        + checked attr을 추가하여 기본 체크된 값 추가 가능(radio도 가능)
+        + value attr을 통해 전달할 값을 넣어줄 수 있으나 data 쪽 일(radio도 가능)
+      - <textarea id="commentBox" cols="30" rows="10">
+      + texrarea는 공간이기는 하나 programming language 입력 불가
+      - <select>: 목록 형태의 선택 항목을 제공하고 입력받는 양식
+      - <optgroup label="">: 중간 그룹 설정 가능
+      - <option>: 항목 수만큼 option tag 필요 
+    > HTML4 button input's 
+      - <input type="image">: 웹사이트 디자인에 맞게 디자인 된 버튼을 사용할 때 주로 사용 (별로 안 중요)
+      - <input type="button">: 우편번호, 검색, 추가, 삭제 등에 사용
+      - <button type="button">: HTML5 방식. 텍스트, 이미지, 아이콘 등 다양한 contents 추가 가능
+      - <input type="file">: file 찾아보기 버튼에 사용 
+      - <input type="submit">: form 작성 완료 시 데이터 전송
+      - <input type="reset">: 해당 form의 모든 양식 초기화. 취소를 누르지 않으면 data가 삭제 되지 않음
+    > HTML5 input's 
+      - <input type="email" maxlength="16" autofocus required>
+        + emailAddr을 전문적으로 입력받으며 touchpad일 경우 keypad 배열에 @가 추가됨 
+        + required: 필수로 입력하도록 하며 email 주소 양식 자동 검수
+        + autofocus: page가 열릴 때 자동으로 초점을 맞춰줌(시각 장애인들에게 정보 전달에 방해가 되지 않는 선에서 사용)
+        + maxlength: 최대 자수 제한(입력이 가능한 모든 field 사용 가능)
+      - <input type="url">
+        + required: 필수로 입력하도록 하며 URL 주소 양식 자동 검수
+        + readonl: 읽기 전용. 서버에 저장된 적이 있는 데이터를 불러오되 수정 불가(ex. ID)
+        + disable: 비활성화. 입력 자체가 불가. 서버에 전송 자체가 이루어 질 수 없음
+        + enabl: 활성화. 입력 가능. 서버에 전송 가능한 데이터 
+      - <input type="tel">: - 를 제외한 전화번호를 입력 받을 수 있음
+      - <input type="number" required>: 수량 전문 태그로 증감이 가능한 spiner UI 제공
+        + required: 적용시 수량 점검 기능
+        + min/max: 최소/최대 수량
+        + step: 1회 증감시 작동할 수치
+        + value: 초기 수량
+      - <input type="range">: 범위 내 값을 선택하는 barbel UI slider
+        + min/max: 최소/최대 범위 수치
+        + step: 1회 증감시 작동할 수치 
+        + value: 초기 설정 수치
+      - <input type="date">: 연, 월, 일 선택
+      - <input type="datetime-local">: 연, 월, 일, 시, 분 선택
+      - <input type="time">: 시간 선택
+      - <input type="month">: 월 선택
+      - <input type="week">: 주 선택
+        + 위 type들은 꾸미기가 어려우나 순정 상태의 모바일/태블릿 등에 호환이 좋음 
+      - <input type="search" list="">: 검색 전용 field. 특징은 우측에 reset button 제공
+        + list: label의 for과 같은 개념. <datalist>, <option>과 함께 사용 가능
+      - <input type="color">: colorpicker. 지정된 색상 코드 (hex:16진)를 기준으로 +@, -@ 값을 설정하고 그 안에 일치하는 결과를 가져옴
+      - input type button과 button type button의 차이점
+          + 닫는 태그 없이 단독 사용 / 닫는 태그가 있어 내용 포함 가능
+          + 브라우저 기본 스타일 유지 / CSS로 자유롭게 스타일링 가능
+          + input은 단순한 클릭 기능 / button은 내부에 다양한 요소를 넣을 수 있음
+
+  > 2_formHW {formHW} 
+    - table을 이용해서 form을 작성
+    - 눈에 보이지 않지만 col이 잘 맞아야함. 그렇지 않으면 구조가 깨지는 것
+    - table 실습을 많이 해볼 것
+
+[step_6]
+
+  > 1_HTML5_addTag {HTML5에 새로 추가된 Tag} 
+    - <figure>: img가 주체가 되는 설명글(figcaption)만을 사용하는 확정구조 
+    + 원래는 상징적인 것들에만 사용했는데 그렇게 되면 사용량이 떨어져서 조금 더 광범위하게 사용해도 됨
+    - <figcaption>: image 설명글
+      + 장점: figcaption 내부 구조에 다양한 태그들이 사용 가능하기 때문에 구조상 이점이 많음
+      + 단점: code line이 두꺼워짐
+    - <time>: 날짜, 시간을 기록하는 태그
+    - <progress>: 나타내고픈 진행 상황을 실시간으로 나타낼 때 
+      + 시작이 있으면 끝이 있어서 다음 단계로 넘어갈 수 있음
+      + value: 사용값 
+      + max: 최댓값
+    - <meter>: 현재 사용량, 소모량 등의 상태를 정지된 산출값으로 표현
+      + 끝이라는 게 발생되면 위험/잘못된 상황
+      + value: 현재 값
+      + min/max: 최소/최대값
+      + low/high/optimum: 높고 낮고 적당함의 기준 범위
+    - <ruby>: ruby(보조 발음) 표시를 감싸는 태그
+    - <rt>: 보조 발음(루비 문자)을 입력하는 태그
+    - <rp>: ruby 미지원 브라우저 대응
+    - <span>: 작은 부분의 공간을 처리하는 데 용이한 태그그
+    - <address>: 작성자 이메일, 전화번호, 주소 등의 연락처 정보를 나타낼 때 사용
+    - <details>: 접었다 펼 수 있는 콘텐츠를 만들 때 사용
+    - <summary>: details의 제목 역할을 하는 필수 태그
+    - <bdi>: 다국어 지원을 위해 특정 텍스트의 방향을 따로 설정할 때 사용
+    - <main>: 웹 페이지의 주요 콘텐츠를 감싸는 태그
+      + page당 한 번이 원칙이고 body의 직계 자손에만 사용 가능
+      + 전체 시스템에서 한 번만 사용하는 것을 권장
+    - <datalist>: input에 자동완성 옵션(제안 목록)을 제공하는 태그
+    - <dialog>: 모달 창(팝업 대화 상자를 만들 떄 사용)
+      + 닫기 전까지 배경과 상호작용이 불가
+
+  > 2_divSpan {div layout(web 2.0 Layout)}
+    - semantic tag를 이용한 layout
+
+  > 3_semantic {semantic Tag's} 
+    - <header>: 모든 페이지에서 공통으로 사용하는 상단 영역(global)
+    - <nav>: navigation의 약자. (주)메뉴 등급에 해당하는 메뉴 그룹
+    - <section>: 웹페이지의 논리적인 구역을 나누는 용도로 사용
+      + section에는 <h2>(머릿글)를 넣어줘야 함
+      + div는 귀속할 수도 귀속될 수도 있으며 section이 가장 큰 개념 
+    - <article>: 독립적으로 의미를 가질 수 있는 콘텐츠 블록을 정의하는 태그
+      + article 역시 <h3>(머릿글)를 넣어줘야 함 
+      + 블로그 글, 뉴스 기사, 제품 설명 등 혼자서도 의미가 통하는 콘텐츠를 담음(주 컨텐츠가 글자로 이루어짐)
+      - <cite>: 작성자(기관)명
+    - <aside>: menu, bannerBox, quickmenu 등의 컨텐츠가 들어감
+      + 보통 광고, 사이드바, 참고 정보, 관련 링크 목록 등에 사용
+    - <footer>: 하단 global. 필수로 사용해야 하며 최소한의 정보만 담을 것  
+      + 저작권 정보(p,cite), 회사주소(address), 증명 및 신고내용(p), 개인정보취급방침(a), 이용약관(a), 반품/교환/환불(a's) 정책 등에 사용

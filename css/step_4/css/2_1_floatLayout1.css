@@ -1,0 +1,49 @@
+*{
+    margin: 0; padding: 0;
+}
+
+body{
+    width: 960px; margin: 0 auto; background-color: antiquewhite;
+}
+
+/* 
+header, .wrap, footer{
+    width: 960px; margin: 0 auto
+} 
+> body 건드리지 않고 동일한 속성 적용  
+*/
+
+header{
+    background-color: #cff;
+}
+
+header nav{
+    background-color: rgba(153, 255, 153, 0.347); height: 100px;
+}
+
+.wrap{
+    /* margin-bottom: 50px;  */
+    background-color: red;
+}
+
+.wrap:after{
+    content: ''; display: block; clear: both;
+}
+
+.wrap aside,
+.wrap section{
+    height: 700px; float: left;
+}
+
+.wrap aside{
+    width: 200px;  background-color: rgba(255,255,0,0.5);
+}
+
+.wrap section{
+    width: 760px; background-color: rgba(255, 0, 255, 0.5);
+}
+
+footer{
+    background-color: #f9f;
+}
+

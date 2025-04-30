@@ -1,0 +1,92 @@
+body{
+    margin: 0;
+}
+
+ul{
+    padding: 0; margin: 0; list-style: none;
+}
+
+.delay1{
+    width: 610px; border: 3px solid #3a00b6;
+}
+
+.delay1 span{
+    display: block; width: 10px; height: 50px; background-color: aqua; margin: 5px;
+    transition: 5s;
+} 
+
+.delay1:hover span{
+    width: 600px;
+}
+
+/* 각각 시간을 다르게 주게 되면 도착시간이 다를뿐 시작시간이 같음  */
+
+/* .delay1:hover span:nth-child(1){transition-delay: 0s;}
+.delay1:hover span:nth-child(2){transition-delay: 1s;}
+.delay1:hover span:nth-child(3){transition-delay: 2s;}
+.delay1:hover span:nth-child(4){transition-delay: 3s;}
+.delay1:hover span:nth-child(5){transition-delay: 4s;} */
+
+/* delay를 전체적으로 주고 시ㅠ으면 event를 빼야함 */
+
+.delay1 span:nth-child(1){transition-delay: 0s;}
+.delay1 span:nth-child(2){transition-delay: 1s;}
+.delay1 span:nth-child(3){transition-delay: 2s;}
+.delay1 span:nth-child(4){transition-delay: 3s;}
+.delay1 span:nth-child(5){transition-delay: 4s;}
+
+
+.delay2 ul{
+    display: block; content: ''; clear: both; 
+}
+.delay2 ul li{
+    width: 33.3%; height: 200px; float: left; transition: 3s;
+}
+.delay2:hover ul li{
+    width: 50%;
+}
+
+.delay2 ul li:nth-child(1){transition-delay: 0.0s; background-color: #ff6565;}
+.delay2 ul li:nth-child(2){transition-delay: 0.5s; background-color: #ffca69;}
+.delay2 ul li:nth-child(3){transition-delay: 1.0s; background-color: #ffff61;}
+.delay2 ul li:nth-child(4){transition-delay: 1.5s; background-color: #90ff90;}
+.delay2 ul li:nth-child(5){transition-delay: 2.0s; background-color: #8383ff;}
+.delay2 ul li:nth-child(6){transition-delay: 2.5s; background-color: #ff89ff;}
+
+.delay2:hover ul li:nth-child(1){ background-color: red;}
+.delay2:hover ul li:nth-child(2){ background-color: orange;}
+.delay2:hover ul li:nth-child(3){ background-color: yellow;}
+.delay2:hover ul li:nth-child(4){ background-color: green;}
+.delay2:hover ul li:nth-child(5){ background-color: blue;}
+.delay2:hover ul li:nth-child(6){ background-color: purple;}
+
+
+
+.delay3 ul{
+    height: 300px; background-color: #000; margin-top: 100%;
+}
+
+.delay3 ul:after{
+    content: ''; display: block; clear: both;
+}
+
+.delay3 ul li{
+    float: left; width: 20%; height: 0; transition-duration: 3s;
+}
+
+.delay3 ul:hover li{
+    height: 300px;
+}
+
+.delay3 ul li:nth-child(1){background-color: #e04; transition-timing-function: cubic-bezier(1,0,1,0);}
+.delay3 ul li:nth-child(2){background-color: #0e4; transition-timing-function: cubic-bezier(0,.43,1,.47);}
+.delay3 ul li:nth-child(3){background-color: #40e; transition-timing-function: cubic-bezier(1,-0.01,0,1)}
+.delay3 ul li:nth-child(4){background-color: #440; transition-timing-function: cubic-bezier(.01,.48,0,.97)}
+.delay3 ul li:nth-child(5){background-color: #044; transition-timing-function: cubic-bezier(.01,.48,.75,.32)}
+
+/* 
+cubic-bezier(0,0,0,0)
+y축 변화 대상
+x축 시간
+지나치게 긴 duration은 좋지 않음
+*/

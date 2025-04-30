@@ -1,0 +1,22 @@
+.redG{
+    background: #9b1f1f;
+    background: linear-gradient(135deg,#9b1f1f 0%, #ea7e7e 100%);
+    /* filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#9b1f1f",end) */
+}
+[class$='G']:not(.yellowG){
+    padding: 20px;
+}
+.greenG{
+    background: #20a024;
+    background: linear-gradient(to right, #20a024 0%, #71c46b 100%); 
+}
+.blueG{
+    background: #1e5799;
+    background: linear-gradient(to bottom, #1e5799 0%, #7db9e8 100%); 
+}
+.yellowG{
+    width: 250px; height: 250px; text-align: center; line-height: 250px; border-radius: 125px;
+    background: #fefcea;
+    background: radial-gradient(ellipse at center, #fefcea 0%, #f1da36 100%);
+}
+/* 제너레이터 참조 사이트 : http://www.colorzilla.com/gradient-editor */

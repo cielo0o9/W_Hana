@@ -1,0 +1,211 @@
+.tagSelector h1{color:#0c0; font-size:20px;}
+.tagSelector p{color:#0cf; font-size:15px;}
+.tagSelector span{color:#336; font-size:13px;}
+
+/*태그선택자 사용법*/
+
+.idSelector p#paragraph1{font-size:16px; text-decoration:underline;}
+.idSelector p#paragraph2{color:#09F; text-decoration:line-through;}
+.idSelector p#paragraph3{font-weight:bold; text-decoration:overline;}
+
+/*ID선택자 사용법*/
+
+.classSelector p.f_size{font-size:20px;}
+.classSelector p.f_weight{font-weight:bold;}
+.classSelector p.f_color{color:#9cf;}
+
+/*CLASS 선택자 사용법 + 다중 클래스 지정 */
+
+.attrSelector fieldset{
+    border: 1px solid #555; background-color: rgb(58, 126, 149);
+}
+.attrSelector fieldset legend{
+    border: 1px solid rgb(33, 33, 60); background-color: #555; color: white; padding: 10px;
+    border-radius: 10px 0 10px;
+}
+.attrSelector fieldset ul{
+    margin: 0; padding: 0; list-style: none;
+}
+.attrSelector fieldset ul li{
+    color: white; font-size: 14px; line-height: 30px; margin-bottom: 10px;
+}
+.attrSelector fieldset ul li label{
+    width: 100px; display: inline-block;
+}
+.attrSelector fieldset ul li input{
+    vertical-align: middle; 
+    padding: 5px;
+}
+.attrSelector fieldset ul li input[type='text']{
+    background-color: rgb(246, 140, 140); border: 3px solid rgb(183, 65, 65); color: rgb(71, 9, 9);
+}
+.attrSelector fieldset ul li input[type='password']{
+    background-color: rgb(126, 178, 255); border: 3px solid rgb(25, 85, 145); color: rgb(14, 14, 98);
+}
+.attrSelector fieldset ul li input[type='radio']{
+    width: 25px; height: 25px;
+   accent-color: brown;
+}
+.attrSelector fieldset ul li input[type='checkbox']{
+    width: 25px; height: 25px;
+   accent-color: rgb(255, 132, 187);
+}
+
+.directSelector > h1{
+    font-size: 30px; color: #336;
+}
+.directSelector > span{
+    font-size: 18px; color: #0c0; line-height: 40px;
+}
+.sameSelector h1~h2{
+    background-color: #09F;
+}
+.sameSelector h1+h2{
+    font-size: 40px; color: #0c0;
+}
+.stringAttrSelector img[src$='png']{
+    width: 100px; border: 3px solid rgb(0, 0, 0); 
+}
+.stringAttrSelector img[src$='jpg']{
+    width: 50px; border: 3px solid rgb(0, 0, 0);
+}
+.stringAttrSelector img[src$='gif']{
+    width: 100px; border: 3px solid blue; 
+}
+.stringAttrSelector h1[title*='제목']{
+    color: green;
+}
+.stringAttrSelector h1[title^='남자']{
+    color: blue;
+}
+.stringAttrSelector h1[title~='탈의실']{
+    background-color: chocolate;
+}
+
+.eventSelector a{
+    display: block; margin-bottom: 30px; text-align: center; font-size: 14px; line-height: 20px;
+}
+.eventSelector a:link{
+    color: red; background-color: black; text-decoration: none;
+}
+.eventSelector a:hover{
+    color: black; background-color: red; text-decoration: underline;
+}
+.eventSelector a:active{
+    color: red; background-color: white; text-decoration: line-through;
+}
+.eventSelector a:visited{
+    color: gray; background-color: white;
+}
+.eventSelector a:focus{
+    border: 3px solid deeppink;
+}
+
+.statusSelector input[type='checkbox']+label{
+    display: inline-block; height: 20px; overflow: hidden; transition: height .5s ease-out;
+}
+
+.statusSelector input[type='checkbox']:checked+label{
+    height: 0px;
+}
+
+.statusSelector input:focus{
+    border: 10px solid red;
+}
+
+.statusSelector input::placeholder{
+    color: forestgreen;
+}
+
+.statusSelector input:enabled{
+    background-color: lightgreen;
+}
+
+.statusSelector input:disabled{
+    background-color: lightpink;
+}
+
+.virtualSelector ul{
+    overflow: hidden; list-style: none; margin: 30px 0; padding: 0;
+}
+
+.virtualSelector ul li{
+    float: left; width: 14.28%;
+    text-align: center; padding: 10px; box-sizing: border-box;
+}
+
+.virtualSelector ul li:nth-child(2n+1){
+    background-color: #444; color: white;
+}
+
+.virtualSelector ul li:nth-child(2n){
+    background-color: #8d4444; color: white;
+}
+
+.virtualSelector ul li:nth-child(3){
+    background-color: rgb(0, 70, 247);
+}
+
+.virtualSelector ul:first-child{
+    border-radius: 20px 0 0 20px;
+}
+
+.virtualSelector ul:last-child{
+    border-radius: 0 20px 20px 0;
+}
+
+/* 
+.shapeSelector h1:nth-of-type(2){
+    color: red;
+} 
+
+.shapeSelector h2:first-of-type{
+    color: green;
+}
+
+.shapeSelector h3:last-of-type{
+    color: blue;
+} 
+*/
+
+.shapeSelector :nth-child(2){
+    color: green;
+}
+.shapeSelector :nth-child(4){
+    color: blue;
+}
+.shapeSelector :last-child{
+    color: red;
+}
+
+.textSelector h1::first-letter{
+    font-size: 100px; color: #09F;
+}
+.textSelector p::first-line{
+    font-size: 14px; line-height: 30px; color: #0c0; text-decoration: underline;
+}
+
+.backandfrontSelector p{
+    counter-increment: rint;
+}
+
+.backandfrontSelector p::before{
+    content: counter(rint) "."; color: #09F; font-size: 24px;
+}
+
+.backandfrontSelector p::after{
+    content: '-' attr(data-page) 'page'; color: #0c0; font-weight: bold; font-size: 24px;
+}
+
+.reactionSelector *{
+    color: white;
+}
+
+.reactionSelector *::selection{
+    background-color: black; color: chartreuse; 
+    font-size: 30px; font-weight: bold; text-decoration: underline;
+}
+
+.notSelector input:not([type='password'],[type='submit']){
+    background-color: brown; border: 5px solid green;
+}

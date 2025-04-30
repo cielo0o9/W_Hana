@@ -1,0 +1,501 @@
+@media screen and (min-width:1280px){
+    header + nav{
+        background-color: white;
+    }
+    header + nav div:after{
+        content: ''; display: block; clear: both;
+    }
+    header + nav div > *{    
+        float: left; 
+        /* 인라인블럭은 복잡하니까 float를 잘 할 것 */
+    }
+    header + nav div ul{
+        width: 80%;
+    }
+    header + nav div ul li:not(:first-child){
+        margin-left: 2.3%;
+    }
+    header + nav div ul li:not(:last-child){
+        float: left;
+    }
+    header + nav div ul li:last-child{
+        float: right;
+    }
+    header + nav div ul li a{
+        font-size: 11px; color: #b9bed1; letter-spacing: 1px;
+        font-weight: 600; display: block; line-height: 55px;
+    }
+    header + nav div ul li a:hover,
+    header + nav div ul li a.active{
+        color: #343e5c;
+    }
+    header + nav div input[type='search']{
+        width: 17%; margin-left: 3%; padding: 19px 2% 19px 4%; 
+        border-width: 0 1px; border-style: none solid; border-color: #f0f2f7; 
+        background: url('../images/bul_search.png') no-repeat 10% center;
+        /* 퍼센트는 두 가지가 기준이 명확함 나를 기준으로 하는 건지 부모를 기준으로 하는 건지 */
+        font-size: 14px; font-family: inherit; color: #343e5c;  font-weight: 600;
+        /* 마진, 패딩이 번거롭게 들어가있음 */
+        /* 인풋은 원래 신경쓸 게 많은데 그냥 받아들일 것
+        쉬운 거 찾는 건 누구나 하니까 공부를 많이 할 것 */
+        /* 좌측이 기본패딩인데 그게 우측에도 긍어강 ㅣㅆ는 것 근데 백그라운드 이미지가 들어가니까 */
+        /* 부모가 너비를 가지고 있으면 자식과 자손도 그것을 기준으로 잡아야함 이해 잘 안 감 공부해볼 것*/
+    }
+    header + nav div input::placeholder{
+        font-size: 13px; color: #b9bed1; font-weight: 600; 
+    }
+
+    /* sliderArea */
+    /* 이 구간에는 섹션을 사용하지 않아도 됐었는데 섹션을 사용했기 때문에 h2도 넣어줬음
+    애초에 div로 했으면 더 좋았을 것이지만 nav에 div가 있기 때문에 씀 */
+    /* 이름을 이렇게 붙여놓았지만 일반적인 경우는 아님 */
+    /*  */
+    section.slideArea{
+        background-color: #1c1e23; margin-bottom: 50px;
+    }
+    section.slideArea h2{
+        display: none;
+    }
+    section.slideArea > div{
+        /* 슬라이더를 처리할 때는 img태그를 사용해서 물리적으로 직접 공간을 잡는 게 편함 */
+        max-width: 1400px; position: relative; margin: 0 auto;
+    }
+    section.slideArea > div > a{
+        /* 이런 건 꼭 svg로 가져오기 png 안 됨 박살남 */
+        /* 이런 건 의미 없는 코드 */
+        /* 유동성 단위를 이용하거나 
+        calc함수를 이용해서 이미지 높이에서 버튼의 높이를 빼면서 맞추면 된다
+        이런식으로 하는 것이 사용자가 버튼을 잘 사용할 수 있게 함 */
+        display: block; width: 42px; font-size: 18px; padding: 10px 0 12px;
+        border-radius: 21px; border: 2px solid rgba(255, 255, 255, 0.3); 
+        box-sizing: border-box; color: white; position: absolute; z-index: 10;
+        background-color: transparent; text-align: center; top: 46%; font-weight: 600;
+    }
+
+    /* 퍼센트를 구할 때는 어떤 부모를 기준으로 잡을 것이냐를 꼭 체크해야 함 */
+    section.slideArea div > a.btn_conL{
+        /* 여기서 class를 부여한 이유는 script를 위한 것 
+        css만 사용할 생각이었으면 굳이 부여하지 않았어도 됨 */
+        left: 11.8%; 
+    }
+    section.slideArea div > a.btn_conR{
+        right: 11.8%;
+    }
+    section.slideArea div ol{
+        position: absolute; left: 47.85%; bottom: 6%; z-index: 1;
+        /* controler는 indicator보다 위에 있어야함 */
+        /* position: absolute; width: 100%; text-align: center; left: 0;
+        이 방법을 사용하는 것이 졸음 */
+    } 
+    /* 원래 패딩으로 덮으면 클릭이 됐었는데 이제는 안 됨*/
+    section.slideArea div ol li{
+        display: inline-block;
+    } 
+    section.slideArea div ol li:not(:first-child){
+        margin-left: 4px;
+    } 
+    section.slideArea div ol li a{
+        display: block; border: 1px solid rgba(255, 255, 255, 0.5); text-indent: -9999px;
+        width: 8px; height: 8px; border-radius: 4px; box-sizing: border-box;
+    }
+    section.slideArea div ol li a.active, section.slideArea div ol li a:hover{
+        background-color: white;
+    }
+    section.slideArea > div ul li{
+        /* float를 대비해서 block으로 만드는 것. 지금은 li를 하나만 사용했지만 실제 슬라이더를 사용할 때는 li들을 float를 이요해서 띄움 */
+        display: block;
+    }
+    section.slideArea > div ul li figure{
+        /* 특이한 구조. relative를 또 사용함. 부모에 맞추는 것보다는 하나 더 사용하는 것이 좋음 */
+        position: relative; 
+    }
+    section.slideArea > div ul li figure img{
+        display: block; width: 100%;
+    }
+    section.slideArea div ul li figure figcaption{
+        width: 33%; /* absoulte를 부여했기 때문에 부여하는 것임 */
+        max-width: 450px; position: absolute; top: 21.2%; left: 18%; color: white;
+    }
+    section.slideArea div ul li figure figcaption dl{
+        margin-bottom: 60px;
+    }
+    section.slideArea div ul li figure figcaption dl dt{
+        font-weight: 900; font-size: 42px; margin-bottom: 25px; line-height: 50px;
+    }
+    section.slideArea div ul li figure figcaption dl dd{
+        font-weight: 400; font-size: 16px; line-height: 24px;
+    }
+    section.slideArea div ul li figure figcaption input[type='button']{
+        /* 
+        dl안에 button을 사용해야하는 게 아쉬운 점 
+        만약에 img와 관련된 정보에 button이 들어있으면 figure 사용하는 건 비추
+        그러나 꼭 figure를 사용해야 한다면 input버튼을 쓰지 말고 a를 사용하는 것이 좋음*/
+        /* 
+        자기의 부모가 단독으로 width를 차지하고 있으면 그 부모를 기준으로 퍼센트를 잡으면 되고
+        그게 아니라 부모가 조부모를 기준으로 퍼센트를 잡고 있는 경우는 조부모를 기준으로 할 것 */
+
+        background-color: #2754eb; color: white; line-height: 42px; width: 165px;
+        font-size: 11px; font-weight: 600; border: none; border-radius: 25px;
+    }
+
+    .contentArea{
+        /* sortbar같은 경우 화면제한 능력이 뛰어나지 않기 때문에 좋은 디자인은 아님 */
+        margin-bottom: 50px;
+    }
+    .contentArea > form fieldset{
+        background-color: white; border-radius: 5px; line-height: 56px; 
+        padding: 0 1.7%; box-sizing: border-box; margin-bottom: 30px;
+        /* 어떤 경우에 padding을 쓰는 것이고, 어떤 경우에 line-height를 사용하는 것인지 */
+    }
+    .contentArea > form fieldset label{
+        display: inline-block; vertical-align: middle; font-weight: 600;
+    }
+    .contentArea > form fieldset label:not([for='freeShipCheck']){
+        font-size: 11px; color: #a1a8bd;
+    }
+    .contentArea > form fieldset span.sbSelect{
+        margin-left: 2.9%;
+    }
+    .contentArea > form fieldset label[for='sb_keywords'],
+    .contentArea > form fieldset label[for='ship_Select']{
+        margin-left: 1.7%; padding-left: 2.56%; border-left: 2px solid rgba(0,0,0,0.05);
+    }
+    .contentArea > form fieldset input:not([type='checkbox']){
+        font-size: 13px; background-color: #f0f2f7; border: 1px solid #e3e8f0; line-height: 28px;
+        box-sizing: border-box; border-radius: 16px; color: #343e5c; font-weight: 600; padding: 0 1%;
+        font-family: inherit;
+    }
+    .contentArea > form fieldset input:not([type='checkbox'])::placeholder{
+        color: #b9bfd3;
+    }
+    .contentArea > form fieldset input[type='search']{
+        width: 14%;
+    }
+    .contentArea > form fieldset input[type='text']{
+        width: 5.5%;
+    }
+    .contentArea > form fieldset input[type='search'],
+    .contentArea > form fieldset input#range_minprice{
+        margin-left: 0.85%;
+    }
+    .contentArea > form fieldset label[for='range_minprice'],
+    .contentArea > form fieldset label[for='freeShipCheck']{
+        margin-left: 2.56%;
+    }
+    .contentArea > form fieldset label[for='freeShipCheck']{
+        padding-left: 2.56%; 
+        font-size: 13px; color: #343e5c; transition: background 0.5s ease-out;
+    }
+    .contentArea > form fieldset input[type='checkbox']:checked + label[for='freeShipCheck']{
+        background: url('../images/bul_check.png') no-repeat left center;
+    }
+    .contentArea > form fieldset .shipSelect select{
+        text-align: right;
+    }
+    
+    .contentArea aside{
+        width: 23%; float: left;
+    }
+
+    .contentArea aside nav{
+        background-color: white; border-radius: 5px; margin-bottom: 30px;
+    }
+    .contentArea aside nav ul *{
+        display: block;
+    }
+    .contentArea aside nav ul > li:not(:last-child){
+        border: 1px solid #f0f2f7;
+    }
+    .contentArea aside nav ul > li > a{
+        /* depth menu - button or text 절대 a 등의 버튼으로 만들면 안 된다 */
+        font-size: 13px; color: #343e5c; font-weight: 600; padding: 15px 7%;
+        /* 퍼센트를 부여하는 게 유리함 */
+    }
+    .contentArea aside nav ul > li > a:after{
+        content: url('../images/more.png'); float: right; transform: rotate(90deg);
+        transition: transform 0.5s ease-out;
+        /* right를 사용하는 이유는 한쪽으로 치울 때 쓰는 것임 여러 리스트가 있을 때는괜히 쓰지 말 것  */
+    }
+    .contentArea aside nav ul > li:hover > a:after{
+        transform: rotate(-90deg);
+    }
+    .contentArea aside nav ul > li ol {
+        background-color: #f0f2f7;
+    }
+    .contentArea aside nav ul > li:hover ol li a{
+        /* a에 hover을 하면 안 됨 ul li에 해야 함 */
+        /* 구조가 ul ol로 잘 구분되어 있어야 css만으로 depth메뉴를 잘 구현할 수 있음 */
+        /* a로 만들게 되면 열리다가 닫혀 버리기 때문에 a로 만들면 안 됨 */
+        font-size: 0px; font-weight: 600; color: #a1a8bd; opacity: 0; padding: 0px 7%;
+        transition: all .3s ease-in-out;
+    }
+    .contentArea aside nav ul > li ol li a{
+        font-size: 11px; padding: 15px 7%; border-bottom: 1px solid #dfe4ee; opacity: 1; 
+    }
+    
+
+
+    .contentArea aside fieldset{
+        background-color: white; border-radius: 5px;
+    }
+    .contentArea aside fieldset:not(:last-of-type){
+        padding: 60px 0 20px 0; margin-bottom: 10px;
+    }
+    .contentArea aside fieldset:last-of-type{
+        padding-top: 33px;
+    }
+    .contentArea aside fieldset legend{
+        font-size: 11px; color: #343e5c; font-weight: 700; border-bottom: 1px solid #f0f2f7;
+        text-transform: uppercase; padding: 0 7% 15px; box-sizing: border-box; width: 100%;
+        position: relative; top: 33px; 
+        /* legend 문제가 많음  */
+    }
+    .contentArea aside fieldset legend a{
+        color: #2754eb; float: right;
+    }
+    .contentArea aside fieldset label{
+        font-size: 13px; display: inline-block; padding-left: 20%; box-sizing: border-box;
+        color: #343e5c; line-height: 20px; font-weight: 500;
+    }
+    .contentArea aside fieldset label:not(:last-of-type),
+    .contentArea aside fieldset span:not(:last-of-type){
+        margin-bottom: 20px;
+    }
+    .contentArea aside fieldset label[for*='ava'],
+    .contentArea aside fieldset label[for*='brand']{
+        width: 78%;
+        /* 우측 depth 메menu arrow 기준으로 맞춘 수치 + inline-block 특성 고려 */
+    }
+    .contentArea aside fieldset label[for*='condition']{
+        width: 100%;
+    }
+    .contentArea aside fieldset label[for*='dlvr']{
+        width: 49%; margin-bottom: 0; line-height: 50px;
+        /* 이건 실무에서 써라
+            수업에서 배워야 하는 것은 다양한 틀린 경험
+        */
+    }
+
+    .contentArea aside fieldset span{
+        width: 13%; display: inline-block; text-align: right; font-size: 13px; font-weight: 500; color: #b9bfd3;
+        line-height: 20px; 
+    }
+
+
+/* 기존에 li로 만들어둔 구조로 작성했으면 편하게 작성할 수 있었음 */
+
+
+    /* line height 안 쓸 때 : 줄바꿈이 될 수도 있을 때 */
+    /* 뎁스 메뉴 처리할 때는 원 뎁스 먼저 처리할 것 */
+    .contentArea section{
+        margin-left: 2.56%; width: 74.44%; float: left;
+    }
+
+    
+    /* .contentArea aside form fieldset:not(:nth-last-of-type(2),:nth-last-of-type(3)) label{
+        background: url('../images/radio_off.png') 15px center no-repeat;
+
+    }
+    .contentArea aside form fieldset:not(:nth-last-of-type(2),:nth-last-of-type(3)) input:checked + label{
+        background: url('../images/radio_on.png') 15px center no-repeat;
+        transition: background 0.1s ease-out;
+    }
+
+    .contentArea aside form fieldset:not(:first-of-type, :last-of-type) label{
+        background: url('../images/check_off.png') 15px center no-repeat;
+        
+    }
+    .contentArea aside form fieldset:not(:first-of-type, :last-of-type) input:checked + label{
+        background: url('../images/check_on.png') 15px center no-repeat;
+        transition: background 0.1s ease-out;
+    }
+*/
+
+    .contentArea aside fieldset input[type='radio'] + label:not([for*='dlvr']){
+        background: url('../images/off_radio.png') no-repeat 9.3% center;
+    }
+    .contentArea aside fieldset input[type='radio'] + label[for*='dlvr']{
+        background: url('../images/off_radio.png') no-repeat 15.15% center;
+    }
+    .contentArea aside fieldset input[type='radio']:checked + label{
+        background-image: url('../images/on_radio.png');
+    }
+    .contentArea aside fieldset input[type='checkbox'] + label{
+        background: url('../images/off_check.png') no-repeat 9.3% center;
+    }
+    .contentArea aside fieldset input[type='checkbox']:checked + label{
+        background-image: url('../images/on_check.png');
+    }
+
+    .contentArea section h3{
+        display: none;
+    }
+    .contentArea section:after{
+      content: ''; display: block; clear: both;
+    }
+    .contentArea section ul li{
+        float: left; display: block; width: 31%; background-color: white; border-radius: 5px;
+        margin: 0 0 30px 3.5%; min-height: 380px;
+        /* li 높이 맞추기 위해서는 min-height 좋음 */
+    }
+    /* 이런 건 flex보다 float가 편함 
+    float를 사용하면 li들의 높이를 잘 맞춰줄 수 없음 그러나 flex는 가능 */
+    .contentArea section ul li:nth-child(5){
+        width: 65.5%;
+    }
+    .contentArea section ul li:nth-of-type(1),
+    .contentArea section ul li:nth-of-type(4),
+    .contentArea section ul li:nth-of-type(6),
+    .contentArea section ul li:nth-of-type(9){
+        /* 신텍스가 안 나온다 : 누적 규칙이 나오지 않는다 */
+        margin-left: 0;
+    }
+    .contentArea section ul li figure img{
+        display: block; width: 100%; border-radius: 5px;
+    }
+    .contentArea section ul li figure:not(:nth-child(5), :nth-child(11)) figure img{
+        /* 이렇게 변화가 일어나는 것들은 class로 귀속시켜두어야 함 
+        다수를 제외한 나머지는 다 class임 */
+        margin-bottom: 30px;
+    }
+    .contentArea section ul li:not(:nth-child(5)) figure figcaption dl{
+        text-align: center; padding: 0 7.5%;
+        /* text의 너비만 중요한 것이 아닌 최대 자수가 몇인지 알아내야 함 그래야 cardSlot 자체의 height를 지정하기 편함 */
+        /* 안 그러면 padding이 밀리면서 float가 박살남 */
+    }
+    .contentArea section ul li figure figcaption dl dt{
+        font-size: 16px; font-weight: 600; color: #1c1e23; line-height: 20px; margin-bottom: 10px;
+    }
+    .contentArea section ul li figure figcaption dl dd:not(:last-of-type){
+        font-size: 12px; font-weight: 500; color: #b8bfd3;
+    }
+    .contentArea section ul li:not(:nth-child(5)) figure figcaption dl dd:not(:last-of-type){
+        margin-bottom: 10px;
+    }
+    .contentArea section ul li:not(:nth-child(5)) figure figcaption dl dd:last-of-type{
+        font-size: 14px; font-weight: 600; color: #343e5c;
+    }
+    .contentArea section ul li:nth-child(5) figure img{
+        border-radius: 5px 5px 0 0;
+    }
+    .contentArea section ul li:nth-child(5) figure figcaption{
+        position: relative; padding: 15px 45% 15px 4%; box-sizing: border-box;
+    }
+    .contentArea section ul li:nth-child(5) figure figcaption dl dd:last-of-type{
+        position: absolute; left: 2%; top: -293px; background-color: black; 
+        font-size: 12px; color: white; font-weight: 600; padding: 5px 10px; letter-spacing: 1px;
+    }
+    .contentArea section ul li:nth-child(5) figure figcaption span{
+        position: absolute; right: 4%; top: 20px; width: 40%; 
+    }
+    .contentArea section ul li:nth-child(5) figure figcaption span a{
+        display: block; width: 50%; float: left; line-height: 30px; text-align: center;
+        border: 2px solid #f0f2f7; text-transform: uppercase; box-sizing: border-box;
+        font-size: 11px; font-weight: 600; color: #3a405b;
+        /* aftercancle 필요 없음. 어차피 이미 띄웠기 때문에 */
+    }
+    .contentArea section ul li:nth-child(5) figure figcaption span a:first-of-type{
+        border-radius: 17px 0 0 17px;
+    }
+    .contentArea section ul li:nth-child(5) figure figcaption span a:last-of-type{
+        border-radius: 0 17px 17px 0; border-left: none;
+    }
+    .contentArea section ul li:nth-child(11){
+        position: relative; background-color: transparent; 
+        /* 이것도 class를 부여하는 것이 가장 좋음. last로 처리하는 것도 좋지 않음 */
+    }
+    .contentArea section ul li:nth-child(11) figure figcaption dl{
+        position: absolute; left: 0; top: 40px; width: 100%; box-sizing: border-box;
+        /* 위에서 준 패딩 */
+    }
+    .contentArea section ul li:nth-child(11) figure figcaption dl dd:nth-child(2){
+        /* 이 두번째 dd도 class가 부여되어있어야 하는 요소 중 하나 */
+        display: none;
+    }
+    .contentArea section ul li:nth-child(11) figure figcaption dl dd{
+        color: rgba(28,30,35,0.5);
+    }
+
+    .bestSellers{
+        background-color: white; text-align: center; padding-top: 20px;
+        margin-bottom: 50px;
+    }
+    .bestSellers h2{
+        font-size: 11px; font-weight: 600; color: #343e5c; margin-bottom: 20px;
+    }
+    .bestSellers ul:after{
+      content: ''; display: block; clear: both;
+    }
+    .bestSellers ul li{
+        float: left; width: 25%; border-top: 1px solid #f0f2f7; box-sizing: border-box; min-height: 340px;
+    }
+    .bestSellers ul li:not(:nth-of-type(4n)){
+        border-right: 1px solid #f0f2f7; box-sizing: border-box;
+    }
+    .bestSellers ul li figure img{
+        width: 100%; display: block;
+    }
+    .bestSellers ul li figure figcaption dl dt{
+        font-size: 16px; font-weight: 600; color: #1c1e23; line-height: 20px; margin-bottom: 10px;
+    }
+    .bestSellers ul li figure figcaption dl dd:first-of-type{
+        font-size: 12px; font-weight: 500; color: #b8bfd3;
+        margin-bottom: 20px;
+    }
+    .bestSellers ul li figure figcaption dl dd:last-of-type{
+        font-size: 14px; font-weight: 600; color: #343e5c;
+    }
+    .bestSellers ul li figure figcaption dl dd:last-of-type del{
+        color: #b8bfd3; padding-right: 15px; box-sizing: border-box;
+    }
+
+    .toSay{
+        background-color: white; padding: 70px 0; box-sizing: border-box;
+    }
+    .toSay div > *:not(ul){
+        text-align: center;
+    }
+    .toSay div > h2{
+        font-size: 32px; font-weight: 900; color: #222328; margin-bottom: 20px;
+    }
+    .toSay div > p{
+        font-size: 16px; font-weight: 400; color: #b9bed1; 
+        font-style: italic; margin-bottom: 50px;
+    }
+    .toSay div ul:after{
+      content: ''; display: block; clear: both;
+    }
+    .toSay div ul{
+        max-width: 970px; margin: 0 auto;
+    }
+    .toSay div ul li{
+        float: left; width: 31%;
+    }
+    .toSay div ul li:not(:first-of-type){
+      margin-left: 3.5%;
+    }
+    .toSay div ul li figure{
+        margin-bottom: 20px;
+    }
+    .toSay div ul li figure:after{
+      content: ''; display: block; clear: both;
+    }
+    .toSay div ul li figure img{
+        float: left;
+    }
+    .toSay div ul li figure figcaption{
+        margin-left: 20px;
+    }
+    .toSay div ul li figure figcaption dl dt{
+        font-size: 14px; font-weight: 500; color: #3a405b;
+        margin-bottom: 6px;
+    }
+    .toSay div ul li figure figcaption dl dd{
+        font-size: 14px; font-weight: 400; color: #b9bed1; 
+        font-style: italic;
+    }
+    .toSay div ul li p{
+        font-size: 16px; font-weight: 400; color: #3a405b; line-height: 24px; width: 90%;
+    }
+    
+}

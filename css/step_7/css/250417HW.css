@@ -1,0 +1,35 @@
+html, body{
+  height: 100%;
+}
+body{
+  width: 1300px; margin: 0 auto; background-color: black;
+}
+section{
+  height: 100%; position: relative; perspective: 1500;
+}
+section .movement{
+  position: absolute; left: 10%; top: 20%; transform-style: preserve-3d; 
+  /* transform-origin: center center; */
+}
+section .movement .pic{
+  animation: rotater 2s ease infinite; animation-direction: alternate; float: left;
+}
+section .movement .pic .cell{
+  transform: rotateZ(10deg);
+}
+@keyframes rotater{
+  0%{
+    transform: rotateX(0deg);
+  }
+  100%{
+    transform: rotateX(20deg);
+  }
+}
+section .movement .pic .cell{
+  opacity: 0.5; transition: transform 0.5s ease-out; 
+}
+section .movement .pic .cell:hover{
+  opacity: 1;transform: scale(1.2) translateZ(0px);
+
+}
+section .movement .pic:hover {animation-play-state: paused;}

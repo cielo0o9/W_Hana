@@ -1,0 +1,76 @@
+body{
+  width: 200px; margin: 200px auto;
+}
+
+div{
+  width: 200px; position: relative; 
+  animation-name: rotate3D; 
+  /* animation-iteration-count: infinite; */
+  animation-duration: 3s; 
+  animation-timing-function: ease;
+  transform-style: preserve-3d;
+}
+
+div:hover{
+  animation-play-state: paused;
+}
+
+@keyframes rotate3D{
+  0%{
+      transform: rotateX(90deg) rotateY(45deg);
+  }
+  100%{
+      transform: rotateX(450deg) rotateY(45deg);
+  }
+}
+
+ div span{
+  width: 200px; height: 100px; position: absolute; left: 0; top: 0;
+}
+
+/*
+div :nth-child(1){
+  background-color: red; animation-name: rotate3D;
+}
+div :nth-child(2){
+  background-color: green; animation-name: rotate3D; 
+  transform-origin: right top; transform: rotateY(-90deg);
+}
+div :nth-child(3){
+  background-color: blue; animation-name: rotate3D;
+  transform: translateZ(-200px);
+}
+div :nth-child(4){
+  background-color: yellow; animation-name: rotate3D;
+  transform-origin: left top; transform: rotateY(90deg);
+}
+div :nth-child(5){
+  background-color: purple; animation-name: rotate3D;
+  transform-origin: top; transform: rotateX(-90deg);
+  height: 200px;
+}
+div :nth-child(6){
+  background-color: pink; animation-name: rotate3D;
+  transform-origin: bottom; transform: rotateX(90deg);} */
+
+
+  div :nth-child(1){
+    background-color: red; transform: translateZ(100px); animation-name: rotate3D;
+  }
+  div :nth-child(2){
+    background-color: green; transform: rotateY(90deg) translateZ(100px); animation-name: rotate3D;
+  }
+  div :nth-child(3){
+    background-color: blue; transform: rotateY(180deg) translateZ(100px); animation-name: rotate3D;
+  }
+  div :nth-child(4){
+    background-color: yellow; transform:rotateY(270deg) translateZ(100px); animation-name: rotate3D;
+  }
+  div :nth-child(5){
+    background-color: purple; transform: rotateX(90deg) translateZ(100px); animation-name: rotate3D;
+    height: 200px;
+  }
+  div :nth-child(6){
+    background-color: pink; transform:rotateX(270deg); animation-name: rotate3D;
+    height: 200px;
+  }

@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+body{
+  font-family: "Noto Sans KR", sans-serif; width: 40%; margin: 1% auto 0;
+}
+fieldset{
+  border: 3px solid #242090; border-radius: 20px; min-width: 300px; width: 100%;
+}
+fieldset > :first-child{
+  background-color: #242090; border-radius: 5px; color: white; padding: 8px;
+}
+fieldset ul{
+  list-style: none; padding: 0;
+}
+fieldset ul li:not(:last-child) :first-child{
+  display: inline-block; width: 135px; line-height: 50px;
+}
+fieldset ul li:not(:last-child) :last-child{
+  border: 1px solid green; height: 30px; vertical-align: middle; padding: 0 10px;
+  transition: all 0.35s ease-out;
+}
+fieldset ul li:not(:last-child) :last-child:focus,
+fieldset ul li:not(:last-child) :last-child:hover{
+  background-color: #cacaca; border-color: black;
+}
+fieldset ul li:not(:nth-child(3n)) input{
+  width: 180px;
+}
+fieldset ul li:last-child{
+  text-align: right;
+}
+fieldset ul li input[type="checkbox"]{
+  width: 17px; height: 17px; vertical-align: text-top;
+}
+fieldset ul li input[type="checkbox"]+label{
+  line-height: 50px; transition: all .5s ease-in; padding: 10px;
+}
+fieldset ul li input[type="checkbox"]:checked +label{
+  background-color: blueviolet; border-radius: 5px; color: white; transition: all .5s ease-out; padding: 5px;
+  font-size: 14px;
+}
+fieldset > input{
+  width: 45%; border: none; line-height: 36px; color: white; padding: 0; margin: -4px;
+}
+fieldset input[type="submit"]{
+  background-color: #242090; margin-right: 10%;
+}
+fieldset input[type="reset"]{
+  background-color: #902020;
+}

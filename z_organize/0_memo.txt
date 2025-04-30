@@ -1,0 +1,88 @@
+[개발 환경]
+    1. chrome 검색 > 설치 > 기본 브라우저 설정
+    2. vscode 검색 > 설치 > (next*3 finish)
+    3. 자동 한글변환 => 안될 때 좌측 5번째 icon(extension)을 눌러서 korean 검색 후 설치
+    4. theme material icom theme, color the tag name 설치
+    5. live server 검색 후 설치
+
+    /* google material icons 등등 svg iconPackage들은 css를 전부 가지고 있음. 그런 아이들은 코드만 작성할 게 아니라 class도 같이 붙여줘야 함 */
+
+[단축키]
+    - shift + tab : tab을 다시 뒤로 가고 싶을 때 단축키
+    - Alt + L + O : 적당히 천천히 누르면 Live server가 열림
+        + 프로젝트 루트 폴더가 열려있는 상태여야함
+    - ctrl + alt + 좌우 화살표 : 파일 분할
+    - alt + 좌우 화살표 : 분할된 파일 커서 이동
+    - ctrl + F : 파일 내 단어 찾기 및 수정
+
+[참조 사이트]
+    - 텍스트 참조 사이트: https://lipsum.com/
+    - mdn 언어 창조 사이트: https://developer.mozilla.org/ko/ 
+    - 개발자 질의 응답 사이트: https://stackoverflow.com/
+    - 달력 프레임워크: https://jqueryui.com/datepicker/ 
+    - google font: https://fonts.google.com/
+    - google icon: https://fonts.google.com/icons
+    - 제너레이터 참조 사이트: http://www.colorzilla.com/gradient-editor
+    - cubic-bezier 커스텀 사이트: https://cubic-bezier.com/#.17,.67,.83,.67
+
+[Github]
+    - github file create and push method
+        > 터미널 생성 (Ctrl + shift + `)
+        > 터미널 열기 (Ctrl + `) 
+        > 명령어 입력 
+            - 초기 세팅
+                - git config --global user.name "cielo"
+                - git config --gloval user.email "ciel0o0q@gmail.com"
+            - 저장소 관련    
+                - git init: 현재 폴더를 git 저장소로 만드는 명령어
+                - git remote add origin "repository 주소" : 원격 저장소 연결 (주소 shift+insert로 붙여넣기) 
+                - git remote -v : 연결된 원격 저장소 확인
+                - git push origin <브랜치명> : git에 업로드
+                - git pull origin <브랜치명> : git에서의 변경사항 가져오기
+            - 주요 명령어 
+                - git status : 현재 git 상태 확인(추가할 파일, 커밋할 파일)
+                - git add . or 파일명 : 파일 커밋할 준비
+                - git log : 커밋 로그 확인
+                - git commit -m "커밋 메세지" : commit(local 저장소에 변경 사항을 저장하는 것)
+
+[참고]
+    - !(느낌표) 에밋 사용이 안 되는 경우 html:5를 통해 호출할 것
+    - 숏핸드: 부모태그 > 자손태그 * 데이터 생성 개수{자손 태그 안의 공통된 문자$}
+        + ex. ul>li*3{번호없는목록$}
+    - 태그 위에 마우스 커서를 가져다대면 사용 가능한 태그인지의 여부를 알 수 있음 + 태그의 자세한 설명 또한 알 수 있음
+    - 수명이 오래된 tag일수록 길이가 짧음
+    - 숏핸드에 정육각형 큐브가 나오면 함수 tag라는 것 
+    - 주소창에 naver 주소 적고 Tab 누르면 바로 검색 모드
+
+[기억해둘 것]
+    - 좌중우 상중하 개념 중요 
+    - 공간에는 높이를 잘 부여하지 않음 > 자연스럽게 작동하게 하기 위함
+    - alt는 img에만 사용 가능 / title 속성은 어디에나 쓸 수 있음 
+    - 확정 구조 : 직계 자손 tag가 정해져 있어서 그것만 사용해야 함
+    - radio, checkbox, select처럼 선택으로 입력받는 태그들은 외관변경이 까다로움
+    - input의 id는 백엔드가 직접적으로 사용하는 것이기 때문에 상호협의하에 상식선 내에서의 web상 네이밍 규칙을 따라야 함
+        1. 한글, 띄어쓰기, 특수문자, 숫자, 대문자가 앞에 오면 안됨
+        2. programing Language가 이미 선정한 예약어 사용 금지
+        3. id를 만들 때에는 영문 단어를 두 개 이상, react에서는 3개 이상 조합해서 사용할 것
+    - 코드를 작성할 때 어떤 하나에 속성이 몰리면 위에 빼먹은 코드를 밑에서 떠맡은 것 
+    - content > padding(size 영향o) > border(영향o) > margin(영향x) 순서
+    - :5500 포트넘버 > 서버는 공개망으로 바꾸기 전까지는 폐쇄망
+    
+[작업 관련 tip]
+    - 이미지나 이미지가 아닌 것을 구분할 것 
+        + 이미지가 1920이 넘어갈 때는 슬라이스 처리하지 말고 원본 사진을 받을 것
+        + 가능한 코드로 작성하는 게 좋음
+    - 용량은 적게 사용할수록 좋음 
+    - 좌측 상단부터 코드를 작성
+    - CI와 BI를 구분할 것
+
+    - font 당기는 방법
+    > https://fonts.google.com/
+        1. 원하는 font 바구니에 담고 제공되는 import url 복사
+        2. @import url('') 사용
+        3. 원하는 요소에 font family 속성 사용
+
+    - icon 당기는 방법
+    > https://fonts.google.com/icons
+        1. 원하는 icon 선택 후 web <style> code 복사 붙여넣기
+        2. 사용하고자하는 tag에 Inserting the icon code 복사 붙여넣기

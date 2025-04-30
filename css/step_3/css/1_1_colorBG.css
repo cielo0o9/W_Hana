@@ -1,0 +1,22 @@
+html, body{
+    height: 100%;
+}
+body, p{
+    margin: 0;
+}
+.wrap{
+    height: 100%;
+    background-color: white;
+}
+.topLine{
+    background-color: burlywood;
+}
+.topLine input{
+    background-color: rgb(97, 134, 97);
+}
+.wrap .topLine p{
+    background-color: rgb(185, 101, 101);
+}
+.wrap p{
+    background-color: rgb(171, 139, 56);
+}

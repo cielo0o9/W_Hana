@@ -1,0 +1,127 @@
+> [image Name]
+  - break point: 정해진 규격을 벗어난 이미지
+  - 공통접두 / 개별접미(bg_numb)
+  - 개별접두 / 공통접미(numb_bg)
+  - 공통접두/분류명/개별...(bg_section_01)
+  - (기본정렬(D/sort) : 숫자 > 알파벳 / 초성)
+  - slice 순서 시안 대조 확인할 것
+  - 배경: bg(background) bg_01~05.png
+  - 로고: logo.png
+    + pri: logo_pri(or header)
+    + sec: logo_sec(or footer)
+  - 선: line or border border.png
+  - CI/BI: C(orporate) > B(rand) ci.png
+  - 아이콘: ico_numb (다량 - 분류명) > ico_01~06.png / ico_sns_01~06.png
+  - 기타: 직관적인 단어사용 > quote.png
+    + ex. sample / example / ex... > ex_01.png
+    + 한가지 양식으로 통일(dummyData : 가짜 -> 삭제)
+  - 배너 : banner > ban (다량: numb / 소량: 이름) ban_01~10.png
+  - 불릿 : bullet > bul_map / bul_phone
+  - 버튼 : button > btn_submit (용도명)
+
+> [moduling]
+  - 모듈을 하게 되면 line-through가 나올 수밖에 없음
+  - 모듈은 예외를 잡는 게 핵심
+  - 모듈 지정 시, 개별로도 부를 수 있고 단체로도 부를 수 있도록 작성
+  - 모듈 작업을 할 생각이라면 글로벌보다 모듈 작업이 선행되어야 하며 module을 잘 하려면 groupping 개념이 확실해야 함
+
+  [구조상 모듈]
+  - 무조건 정해진 구조를 사용해야만 모듈 적용이 가능하기 때문에 적용은 어려우나 class를 사용하지 않아도 되기 때문에 css의 효율을 챙길 수 있다는 장점이 있음
+  - 구조화 모듈을 기반으로 한 css 핸들링이 목적이라면 구조화가 두껍게 나온다고 한들 상관 없음(wrapper가 있으면 2depth를 기본으로 하기 때문)
+
+> [publish_01]
+  > [추가 개념]
+    - A/U: All Using > 미디어쿼리에 포함되지 않는 전체 사용 코드  
+    - inherit; 케스케이트에 inherit (체이닝)
+    - cdn
+      + 시스템이 느리면 cdn이 얼마나 있는지 가장 먼저 확인하고 줄여야함
+      + 요청을 해서 받는 시스템이기 때문에 가장 느림 cdn을 병합해줘야 함
+
+  > [참고]
+    - 동일한 속성을 부여하였음에도 취소선이 생기지 않는 이유 > 브라우저는 숏핸드와 정규식 문법은 다른 코드라고 인식함(분리 방식 코드라면 전부 가능)
+    - url('') > 스트링처리 꼭 신경쓸 것
+    - 연쇄적인 반응, 사이드 이펙트를 생각하는 것이 좋은 퍼블리셔
+    - 레이어 우측 하단에 표식 O(백터 방식) X(비트맵 방식)
+    - font-size는 font의 높이를 기준으로 함 (우리나라는 높이 너비 동일)
+
+  > [헷갈리는 개념]
+    [CSS]
+    - fieldset이 두 개면 submit도 두 개
+    - background에 속성 부여 시 사이즈는 있는데 포지션이 없으면 구문 오류가 남
+    - background 숏핸드 작성 시 이미지를 먼저 처리한 후 컬러를 부여할 것
+    - 초반에 상하 패딩을 놓치면 안 됨 > 지금 배우는 상황에서는 웬만한 속성들은 초반에 넣을수록 유리함(첫단추 잘 끼우기)
+    - 동작 개념의 class는 통일시켜주는 게 좋음(active 사용)
+    - form에게는 css 아무것도 부여하면 안 됨
+
+    > [attribute]
+    ▪︎ input
+    - input은 줄바꿈을 안 함 
+    - input focus는 절대 빼지 말 것
+    - 대부분의 input 요소는 line-height를 부여했을 때 시각적으로 제대로 적용되지 않는 경우가 있음
+    + text, email, search, tel, url: 제한적 적용
+    + password: 거의 무시됨
+    + number: 제한적
+    + button, submit, reset: 적용 가능
+    + checkbook, radio: 적용 가능
+
+    ▪︎ line-height 
+    - a tag 사용시 메뉴 사이가 좁으면 터치가 힘들기 때문에 line-height를 필히 부여
+      + 성인 남성 75px 성인 여성 55-65px
+    - 문단 작업시 line-height 꼭 부여해야함
+      + 디자이너 또한 마찬가지. 줄간은 오토로 작업하게 두면 안 됨
+    - 기본적으로 font는 line-height를 가지고 있으며 각각의 font마다 그 높이가 상이함
+      + 대부분의 오차는 5 ~ 10px > 대부분 상하 합 5px 차감 / p 두 개 10px정도 차감
+    - a는 개행될 수 있음 그래서 line-height 사용 못 함
+
+    [HTML]
+    - 구조화 시 warp으로 감싸는 게 좋음
+    - 원페이지는 섹션만으로 구조화 해도 O 원페이지 아니면 X
+      + body > header, main, section, article or div,  footer 사용할 것
+    - 원페이지면 헤더가 크게 잡힐 수 있음
+
+  > global
+
+    [module]  
+      - .btn_more{ font-family: 'Hammersmith One'; font-weight: 400; text-align: center; color: #00e0d0; display: block; border: 1px solid #00e0d0; padding: 12px 0.6%; box-sizing: border-box; }
+        - 사용한 button 종류가 a, input이니 기본값이 동일하도록 세팅해준 것
+        - 보더 박스를 풀거나 퍼센트 처리를 해야함
+        - 작은 공간은 픽셀을 사용해도 됨 그러나 떨어질 수도 있음을 인지
+      - [class$='Area'] p + hr{ width: 50px; border-width: 2px 0 0; border-style: solid; margin: 0 auto 45px; }
+        - border는 top만 빼고 다 꺼줌
+        - width가 가변될 경우 page로 넘겨야 하나 고정될 경우 모듈 적용 가능
+
+    [header]
+      - display: block; 부여한 이유
+        - <a>: inline-block이기 때문에
+        - <img>: margin-bottom이 생기기 때문에
+        디스플레이 적응형이 갖춰진 로고를 가질 수 있음
+        마우스가 아닌 터치형이면 터치가 안 되는 문제가 생김
+        - header div nav {padding-left: 130px; 로고의 너비만큼 패딩을 던지는 게 좋음 별도로 퍼센트 계산하지 않을 수 있도록}
+        - header div > ul li p {중요. 라인하이트 꼭 부여. 줄간은 오토로 작업하게 두면 안 됨}
+        - header div nav ul li:not(:first-child) {margin-left: 2.65%; 
+        - width: 100%인 nav를 기준으로 퍼센트 계산}
+        - footer div * {<input>은 inherit이 안 되기 때문에 전체 선택자를 사용해주어야 함. div라는 공간이 아닌 그 안에 부여하는 것이기 때문에 div도 추가해줄 것}
+        - footer > div div:not(:first-of-type) h2 {line-height: 50px; 따로 수직정렬중앙 맞출 필요 없이 로고 이미지의 높이에 맞춰 line-height를 부여하면 됨}
+
+    [footer]
+      - footer > div div:nth-of-type(3) input[type='email']::placeholder{ color: rgba(255, 255, 255, 0.75); }
+        + placeholder 속성은 이렇게 부여
+      - footer > div div h2{ margin-bottom: 20px; }
+        + 타이틀 및 컨텐츠들이 어느정도 정리 된 이후 계산하기 편함. 하단 text line height 5px 빼서 20px 
+
+  > page 
+
+    [about]
+    - #about{ padding-left: 7%; }
+    + img 가 좌측 guide에 붙어있지 않음
+
+    [video]
+    - section.videoArea{ background: url('../images/bg_02.png') left top / cover no-repeat; padding: 200px 0; }
+      + 영상의 사이즈를 모르는 상태라 패딩으로 임시공간(temporary Code) 부여. 나중에는 다 제거해야 함
+    - section.videoArea a{ color: white; margin: 0 auto 30px; font-size: 45px; padding: 24px 0 29px; display: block; width: 100px; border-radius: 50px; border: 3px solid white; box-sizing: border-box; text-align: center; }
+      원같은 경우는 svg로 처리하는 게 좋음.
+      라인하이트를 사용하지 못함 상하 패딩을 줘야함 */
+
+    [expertise]
+    section.experArea{ text-align: center; } 
+    - 이런식으로 구조 전체에 center 부여하는 것도 가능

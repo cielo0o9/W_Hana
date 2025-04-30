@@ -1,0 +1,40 @@
+a{
+    font-size: 40px; margin-left: 20px; display: inline-block;
+}
+
+a:link{
+    color: black;
+}
+
+a:visited{
+    color: red;
+}
+
+a:hover{
+    color: aqua; text-decoration: none; font-size: 50px;
+}
+
+a:active{
+    color: blueviolet;
+}
+
+input#userName:focus{
+    background-color: bisque; border: 2px solid forestgreen;
+    outline: none;
+}
+
+input#chkType1{
+    accent-color: red; width: 25px; height: 25px;
+}
+
+input#radioType1{
+    accent-color: magenta;
+}
+
+input#volType1{
+    accent-color: gray;
+}
+
+#downProg{
+    accent-color: #ea5367;
+}

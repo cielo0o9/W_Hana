@@ -1,0 +1,214 @@
+body{
+    background-color: #e4e5e7;
+}
+
+.mont{
+    font-family: "Montserrat", sans-serif;
+}
+
+.crim{
+    font-family: "Crimson Pro", serif;
+}
+
+input[type='radio'], input[type='checkbox']{
+    display: none;
+}
+a{
+    text-decoration: none;
+}
+.selectBox{
+    display: inline-block; box-sizing: border-box; background: url('../images/more.png') no-repeat right center; 
+}
+.selectBox select{
+    border: none; box-shadow: none; background-image: none; background-color: transparent; appearance: none;
+    font-family: inherit; font-weight: inherit;
+    /* inherit은 못 먹는 것들을 먹게 해주는 것 */
+    /* cancle같이 select 다 바꾸는 속성 */
+    padding: 10px 20px 10px 10px; font-size: 11px; font-weight: 600;
+     box-sizing: border-box;
+    /* css는 옷을 바꾸지는 못하고 옷을 벗길 수는 있음 */
+}
+/* .selectBox.active{
+    background-image: ; 자바스크립트에서 컨트롤
+} */
+
+ul, ol{
+    list-style: none;
+}
+
+/* 
+    250423 Wed 
+    global css 작성하기 전 가장 처음에 하는 작업
+    > 시안에서 전체적으로 사용되는 태그에서 각각 사용하지 않을 것 같은 기본 속성을 찾아서 none을 해줌
+
+    최근 나온 기능들일수록 브라우저 적응에 시간이 걸리기 때문에 보편화 되기까지 다소 시간이 걸림
+
+    1170px의 가이드는 옛날 방식
+
+    다양한 화면 크기(pc, tablet, mobile 등)에 따라 웹사이트가 잘 보이고 잘 작동하도록 만드는 것이 웹 퍼블리셔의 핵심 가치 중 하나나
+    > 반응형에 대해 깊게 공부할 것
+*/
+
+/* 
+전체 레이아웃 정렬 - .container { max-width + margin: 0 auto; + padding 좌우}
+요소 간 간격 통일 - spacing scale (4px, 8px ..) 정의 후 class나 변수로 관리
+    원래 label은 인라인이라서 너비 적용이 안 되는데 google에서 당겨올 때 inline-block 속성을 같이 주기 때문에 너비 적용이 가능해짐
+*/
+
+    /* uiux 때 간격 잡을 때 가이드 기준 퍼센트를 잡아주는 게 좋음 */
+
+@media screen and (min-width:1280px){
+    header > div, header + nav div, section.slideArea div, .contentArea, .bestSellers, .toSay div, footer > div{ 
+        max-width: 1170px; margin: 0 auto;
+    }
+    header{
+        border-bottom: 1px solid #f0f2f7; background-color: white;
+    }
+    header > div:after{
+        display: block; content: ''; clear: both;
+    }
+    header > div > *{
+        float: left;
+    }
+    header > div label.material-icons{
+        width: 5.12%; max-width: 60px; line-height: 90px; box-sizing: border-box; border-right: 1px solid #f0f2f7; display: block;
+        /* float를 사용할 것이기 때문에 블럭으로 속성을 바꿔줌 */
+    }
+    header > div h1{
+        width: 10.68%; max-width: 125px;
+    }
+    header > div h1 a{
+        display: block; padding: 32px 0; text-align: right;
+    }
+    header > div h1 a img{
+        width: 100%; max-width: 92px;
+    }
+    header > div nav{
+        width: 54.7%;
+    } 
+    header > div nav ul{
+        text-align: right;
+    }
+    header > div nav ul li{
+        display: inline-block;
+    }
+    header > div nav ul li:not(:first-child){
+        margin-left: 2.56%;
+    }
+    header > div nav ul li a{
+        display: block; font-size: 14px; font-weight: 600; color: #343e5c; line-height: 90px;
+    }
+    /* 바깥쪽은 float로 처리하고 너비를 부여하면 쉽게 정리할 수 있음 */
+    header > div div{
+        width: 29.5%; font-size: 11px; text-align: right; color: #343e5c; line-height: 90px;
+    }
+    header > div div *:not(input){
+        display: inline-block;
+    }
+    header > div div strong{ 
+        padding-left: 25px; line-height: 18px; font-weight: 600;
+        background: url('../images/bul_cart.png') left top / contain no-repeat;
+    }
+    header > div div span{
+        line-height: 24px; margin-left: 5px; background-color: #e3e8f0; width: 24px; border-radius: 12px; text-align: center; font-weight: 400;
+    }
+    header > div div input[type='button']{
+        margin-left: 25px; color: #343e5c; font-size: 11px; letter-spacing: 1px; background-color: transparent; border: 2px solid #f0f2f7; 
+        border-radius: 16px; padding: 8px 15px; box-sizing: border-box; font-weight: 600; font-family: inherit;
+        /* 왜 margin에 px을 사용하는지 
+        부모공간에 여유가 있고, 환산하기에는 너무 적은 수치. 어차피 % 환상해도 inline-blcok이니까 */
+        /* 가이드에 따라 미디어쿼리의 maxwidth를 잘 바꿔줘야함(이해 잘 안 감)  */
+    }
+
+    .paging{
+        position: relative; clear: both; background-color: white; border-radius: 5px; 
+        /* 쌤 코드에는 포지션과 클리어가 꼭 들어가있음 */
+    }
+    /* 이런 건 div 말고 클래스만 적어줘야 함 */
+    .paging > a{
+        position: absolute; top: 0; text-align: center; width: 16.66%;
+        line-height: 90px; font-weight: 600; color: #3a405b;
+        /* 이런 건 이미지로 제발 처리해라 안 그러면 쓸데없는 코드들을 쳐야함*/
+    }
+    .paging > a:first-of-type {
+        left: 0; border-right: 1px solid #f0f2f7;
+    }
+    .paging > a:last-of-type {
+        right: 0; border-left: 1px solid #f0f2f7;
+    }
+    .paging ol{
+        text-align: center; padding: 20px 17%; box-sizing: border-box;
+    }
+    .paging ol li{
+        display: inline-block;
+    }
+    .paging ol li a{
+        display: block; width: 50px; line-height: 50px; border-radius: 25px; font-size: 14px; color: #3a405b; background-color: white;
+        transition: box-shadow .3s ease-out;
+    }
+    .paging ol li a.active, .paging ol li a:hover{
+        box-shadow: 0 5px 8px rgba(168, 172, 185,0.62); color: #b9bed1;
+    }
+
+    footer{
+        background-color: #222328; 
+    }
+    footer > div{
+        padding: 60px 0; position: relative;
+    }
+    footer > div span{
+        position: absolute; right: 0; top: 60px;
+    }
+    footer > div:first-child{
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    footer > div:first-child h2{
+        position: absolute; left: 0; top: 60px; max-width: 92px; width: 7.86%; min-width: 78px;
+    }
+    /* 로고를 흘려썼고 얇아서 min-width: 78px; 을 사용해야 함 */
+    footer > div:first-child h2 img{
+        width: 100%; display: block;
+    }
+    footer > div:first-child ul{ 
+        padding: 0 10%; text-align: center;
+    }
+    footer > div:first-child ul li{
+        display: inline-block;
+    }
+    footer > div:first-child ul li:not(:first-child){
+        margin-left: 2.56%;
+    }
+    footer > div:first-child ul li a{
+        display: block; color: white; font-size: 12px; font-weight: 600;
+    }
+    footer > div:first-child span{
+        width: 8.97%;
+    }
+    footer > div:first-child span a{
+        background-repeat: no-repeat; background-position: center; text-indent: -9999px;
+        width: 24px; height: 18px; display: inline-block;
+        /*  */
+    }
+    /* 규격을 잡아서 처리할 거면 굳이 백그라운드 이미지로 처리할 필요없고 img 태그를 던지면 됨 */
+    footer div:first-child span a:nth-of-type(1){background-image: url('../images/sns_01.png'); background-position: left;}
+    footer div:first-child span a:nth-of-type(2){background-image: url('../images/sns_02.png'); background-position: 5px;}
+    footer div:first-child span a:nth-of-type(3){background-image: url('../images/sns_03.png'); background-position: right;}
+
+    footer > div:nth-child(2) p{
+       max-width: 510px; font-size: 14px; font-style: italic; font-weight: 400; line-height: 22px; color: rgba(255, 255, 255, 0.3);
+       width: 50%;
+       /* uiux에 italic의 font case가 잡혀있는지 먼저 확인해야하고 
+       두번째는 font에 iralic이 있는지 먼저 확인해봐야함
+       웹 폰트에 italic이 있는 게 흔하지 않음
+       */
+    }
+    footer > div:nth-child(2) span{
+        text-align: right; width: 50%;
+    }
+    footer > div:nth-child(2) span a{
+        font-size: 11px; color: rgba(255, 255, 255, 0.3); display: inline-block; font-weight: 600;
+    }
+    footer > div:nth-child(2) span a:last-of-type{
+        margin-left: 2.56%;
+    }
+}

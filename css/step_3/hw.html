@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Homework</title>
+  <style>
+    .searchBar{
+      /* input display: inline-block */
+      display: block; width: 100%; 
+      /* display block은 width가 100%임 그러나 기능을 담당하는 태그인 input's img는 제외. 그래서 width:100% 추가 */
+      border-width: 0px 0px 2px; line-height: 35px; font-size: 16px;
+      background-image: url('images/chevron_right_FILL0_wght400_GRAD0_opsz48.svg'), url('images/search_FILL0_wght400_GRAD0_opsz48.svg');
+      background-repeat: no-repeat; background-size: 30px, 25px; background-position: 15px center, right 15px center;
+      text-indent: 5%;
+      /* padding - pad를 넣는다는 의미로 이해하면 됨 = 안쪽에서 내부 여백이 발생됨 */
+    }
+  </style>
+</head>
+<body>
+  <input type="search" class="searchBar" placeholder="input ur search keyword's">
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+    <style>
+      html, body{
+        width: 100%;
+      }
+      .searchBox{
+        border-bottom: 1px solid black;
+        width: 100%;
+      }
+      label img{
+        width: 35px;
+        height: 35px;
+        vertical-align: middle;
+      }
+      .typesch{
+        border: none;
+        font-size: 16px;
+        width: 96%;
+      }
+      .typebut{
+        background-image: url('images/search_FILL0_wght400_GRAD0_opsz48.svg');
+        background-size: cover;
+        background-color: transparent;
+        border: none;
+        width: 25px;
+        height: 25px;
+      }
+  </style>
+</head>
+<body>
+    <div class="searchBox">
+        <label for="searchKew">
+            <img src="images/chevron_right_FILL0_wght400_GRAD0_opsz48.svg" alt="chevron">
+        </label>
+        <input type="search" id="searchKew" class="typesch" placeholder="input ur search keyword's">
+        <input type="button" class="typebut">
+    </div>
+</body>
+</html> -->

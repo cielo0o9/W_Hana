@@ -1,0 +1,70 @@
+@media screen and (max-width:767px) and (orientation: landscape){
+    article{
+        background-color: #F4D793; margin-bottom: 30px; padding: 30px;
+    }
+    article h2{
+        color: #889E73; font-size: 24px; line-height: 30px;
+        margin-bottom: 20px;
+    }
+    article p{
+        background-color: #889E73; font-size: 16px; line-height: 22px; padding: 20px;
+        color: white;
+    }
+}
+
+@media screen and (max-width:767px) and (orientation: portrait){
+    article{
+        background-color: #F4D793; margin-bottom: 30px; padding: 30px;
+    }
+    article h2{
+        color: #889E73; font-size: 24px; line-height: 30px; margin-bottom: 20px;
+    }
+    article p{
+        background-color: #889E73; font-size: 16px; line-height: 22px; padding: 20px;
+        color: white; border-radius: 10px;
+    }
+}
+/* mobile code */
+
+@media screen and (min-width:768px) and (max-width:1279px) and (orientation: landscape){
+    article{
+        background-color: #fdfbee; margin-bottom: 30px; padding: 30px;
+    }
+    article h2{
+        color: #FE4F2D; font-size: 24px; line-height: 30px; margin-bottom: 20px; background-color: #57B4BA;
+    }
+    article p{
+        background-color: #015551; font-size: 16px; line-height: 22px; padding: 20px;
+        color: white;
+    }
+}
+
+@media screen and (min-width:768px) and (max-width:1279px) and (orientation: portrait){
+    article{
+        background-color: #006A71; margin-bottom: 30px; padding: 30px;
+    }
+    article h2{
+        color: #ffedd3; font-size: 24px; line-height: 30px;
+        margin-bottom: 20px;
+    }
+    article p{
+        background-color: #48A6A7; font-size: 16px; line-height: 22px; padding: 20px;
+        color: white;
+    }
+}
+/* tablet code */
+ 
+@media screen and (min-width:1280px) {
+    article{
+        background-color: lightgray; margin-bottom: 30px; padding: 30px;
+    }
+    article h2{
+        background-color: seagreen; color: lightgreen; font-size: 24px; line-height: 30px;
+        margin-bottom: 20px;
+    }
+    article p{
+        background-color: lightyellow; font-size: 16px; line-height: 22px; padding: 20px;
+        color: brown;
+    }
+}
+/* desktop code */

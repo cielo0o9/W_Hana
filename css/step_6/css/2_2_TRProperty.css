@@ -1,0 +1,27 @@
+body{
+    margin: 0;
+}
+
+.property{
+    width: 610px; margin: 0 auto; border: 3px solid blue;
+}
+
+.property span{
+    display: block; width: 10px; height: 50px; margin: 10px;
+    /* 우리가 변경해야 하는 값 - width, background-color */
+    /* transition-property: width, background-color;
+    transition-duration: 5s, 1s;
+    transition-timing-function: linear, ease-out;
+    transition-delay: 1s, 1s; */
+    /* 변경하고자 하는 속성을 특정하는 것 */
+    /* 각 속성마다 지연, 가속 등을 각각 부여할 수 있다  */
+    transition: all 0.5s ease-out;
+    /* 0. 대를 작성할 때는 보통 0을 생략하고 .부터 적음 */
+    /* 가속도 뒤에 딜레이를 적을 수 있음 */
+}
+
+.property:hover span:nth-child(1){width: 100px; background-color: deeppink;}
+.property:hover span:nth-child(2){width: 200px; background-color: deepskyblue;}
+.property:hover span:nth-child(3){width: 300px; background-color: darkgoldenrod;}
+.property:hover span:nth-child(4){width: 200px; background-color: darkgray;}
+.property:hover span:nth-child(5){width: 500px; background-color: darkred;}

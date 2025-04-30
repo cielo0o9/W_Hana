@@ -1,0 +1,531 @@
+[step_1]
+
+  > 1_style {CSS 작성 방식}
+    (1) outerStyle 방식 (link로 연결하는 방식)
+      + 퍼블리셔들에게 제일 중요하고 많이 사용되는 방식
+      + <link rel="stylesheet" href="css/1_style.css">
+    (2) innerStyle 방식(style tag 안에 작성)
+      + 단일 페이지의 웹일 경우, 임시 테스트 파일을 만들 때
+      + <style>: HTML 문서 내에서 CSS 스타일을 정의할 때 사용 
+    (3) lnlineStyle 방식(tag 안에 style 작성)
+      + 작업자가 공석이거나 특별한 사유로인해 긴급한 유지보수가 이루어져야 할 때
+      + <p style="color:red;">
+    > 알아둘 것
+      - 모든 언어들은 위에서 아래로 명령을 수행하기 때문에 먼저 작성한 코드 위로 새로 작성한 코드가 덮어짐 
+      - reset 말고 global 이나 page 영역에서 취소선이 많으면 안 됨. 취소선이 나오지 않도록 노력할 것
+
+  > 2_classId {css class 와 id 사용법}
+    - <class>: 여러 요소를 그룹화(두 개 이상 부여 가능)
+      + 여러 가지 요소 공통된 속성을 부여하는 것
+      + <button class="btn create">
+    - <id>: 특정 요소 하나를 고유하게 식별
+      + <input type="text" id="userName">
+    - <inherit>: 부모 요소의 스타일 속성을 상속하도록 지정하는 값
+      + all: inherit; > 부모의 모든 속성, 심지어는 상속되지 않는 속성(margin, padding 등)도 강제로 상속할 수 있음
+
+  > 3_grammar {CSS 기본 문법}
+    - header h1 img{}: 이와 같이 요소의 계층을 분명히 해야 함 
+      + 그러나 동일한 tag를 반복해서 써야하는 경우 부모 태그를 작성하지 않기도 함(step_3/3_border)
+      + <body>는 부모로 인정하지 않기 때문에 작성하지 않아도 됨
+    - ul, ol, dl{}: 이와 같이 grouping Type도 가능 
+    - body default > display: block; margin: 8px;
+    - 초기화 html, body{margin: 0px; padding: 0px;}
+      + 부모 요소의 크기나 위치를 기준으로 정확하게 배치되게 하기 위해 초기화 과정을 거침
+    - ul의 기본 속성
+      + <list-style-type>: disc;(원형 불릿)
+      + <list-style-position>: outside; (불릿이 목록 항목의 바깥쪽에 표시됨)
+      + <margin>: 브라우저마다 다를 수 있지만, 상단과 하단에 여백이 적용됨
+      + <padding-left>: 40px; 왼쪽에 패딩이 설정됨 이로 인해 항목들이 왼쪽으로 들여쓰기 되어 보임
+    - <text-decoration>: 텍스트에 밑줄, 취소선, 강조선 등을 추가하거나 제거하는 데 사용     
+      + line-through, none, underline, overline 등 복합 사용도 가능
+
+[step_2]
+
+  > font {css font Control - 글꼴사용제어}
+    - <font-weight>
+      + thin(psd../hairLine...) - 100(code)
+      + extraLight - 200
+      + light - 300
+      + regular - 400 (default값)
+      + medium - 500
+      + semibold - 600
+      + bold - 700
+      + extraBold - 800
+      + black - 900
+    - <line-height>: 줄간. 글자를 가로를 기준으로 반 나눠서 상하에 각각 적용
+      + 요소에 위 아래 padding을 부여한 것과 같은 효과를 줄 수 있음. 단, 줄바꿈이 일어나지 않는다는 확정이 있을 때만 사용하는 것이 좋음 
+    - <letter-spacing>: 자간(글자). 공백에도 자간이 적용되는 어색한 부분이 있음
+    - <word-spacing>: 단간(단어). 띄어쓰기 규칙이 latin어 개념과 다르기 때문에 국내 사용x
+    - <white-space>: 공백, 줄바꿈, 탭 등의 공백 문자가 어떻게 처리될지 설정 가능
+      + 텍스트 내용이 여러 줄에 걸쳐 표시될 때 그 모양을 제어하는데 유용함
+      + <normal>: <p>의 width가 150px일 때, <p>의 너비에 맞춰 공백은 하나로 축소되고, 텍스트가 자동 줄바꿈 됨 
+      + <nowrap>: <p>의 width가 150px일 때, 공백은 하나로 축소되나, 텍스트는 자동으로 줄바꿈 되지 않고 한 줄로 출력
+        + <text-overflow>: ellipsis; - 텍스트가 컨테이너 크기를 초과할 때 남은 텍스트를 말줄임표로 표시하는 기능
+        + <overflow-x>: scroll; 컨텐츠의 크기만큼 x축 scroll bar 가 생김
+    - <vertical-align>: 수직 정렬. inline, lnline-block 요소들의 수직 정렬을 결정하는 속성 
+      + 보통 텍스트와 이미지의 수직 정렬을 맞추기 위해 사용
+      + 높은 요소를 기준으로 preset(baseline, top, middle 등) setting 됨
+      + 작은 요소에게 수동 수치를 입력하여 나머지 부분을 보정하는 것도 가능
+      + baseline(default): 문자의 밑선에 맞추어 정렬
+      + middle: 문자의 중앙을 기준으로 해서 정렬
+      + sub: 아래첨자
+      + super: 위 첨자
+      + text-top: 문자의 윗선을 밑선으로 해서 정렬
+      + top: 위쪽에 정렬
+      + bottom: 아래쪽 정렬
+      + %: 부모 요소의 높이에 대한 백분율로 설정 가능 (후처리 개념 알아보기)
+    - <text-indent>: 본래 문단 내 들여쓰기를 담당
+      + 비둘기 코드(-9999px): 웹 접근성으로 인해 배경이미지를 노출하면서 동시에 text 정보를 남길 때 사용. 
+    - <text-transform>: none, lowercase, uppercase, capitalize
+    - <text-align>: 글자뿐만 아니라 inline,inline-block Tag's 정렬 가능
+
+[step_3]
+
+  > 1_1_colorBG {배경 색상 지정}
+    - <background-color>: 
+      + <transperent>: 투명
+      + background라고만 쓰게 되면 background의 나머지 속성들이 다 기본값으로 처리 되어버림. 색상을 바꾸고 싶으면 color 라고 정확히 명시할 것 
+
+  > 1_2_patternBG {패턴 이미지}
+    - <background-image>: url('');
+      + 경로를 사용할 수 있는 기능(파일 불러오기)
+      + 웬만하면 ''(singlequote)를 사용
+      + 분리 적용은 콤마(,) / 앞에 쓸 수록 화면의 가장 앞에 배치. 위로 레이어드 되지 않음
+    - <background-repeat>: 화면에 가득 찰 때까지 image를 반복 출력
+      + default값은 repeat
+    - <rgba> (red, green, blue, alpha)
+      + r, g, b: 0 ~ 255까지
+      + a: opacity. 100을 1로 치환해서 사용함
+
+  > 1_3_background {배경 잔여 속성}
+    - <background-size>: 
+      + <cover>: 좌측 상단을 기준으로 화면을 덮음
+        + 비율을 유지하면서 이미지를 확대하거나 축소함(이미지가 잘려보일 수 있음)
+        + 작은 이미지를 사용하면 이미지가 늘어나며 깨지기 때문에 큰 이미지를 사용해야 함
+      + <contain>: x축, y축 둘 중에 하나 먼저 닿는 곳까지만 늘어남
+        + 종횡비를 맞추며 늘어난다는 특징이 있어 이미지가 깨지지 않음
+    - <background-attachment>
+      + <fixed>: scroll을 굴려도 이미지가 고정되어 있음 
+      + <scroll>: scroll을 굴림에 따라 이미지도 함께 움직임
+    - <background-position>: 
+      + left / right | top / middle / bottom 
+      + <center>: x축 y축 전부 동일한 속성을 가지고 있을 경우
+
+  > 1_4_fixedEx {fixed 예제}
+    - *(전체 선택자): 모든 요소를 선택하는 데 사용됨
+      + 초기화 작업이 귀찮을 때 임시로 잠깐만 사용
+    - background: url('../images/example.jpg') center / cover no-repeat fixed;
+      + 이처럼 모든 속성들을 숏핸드로 작성하는 것도 가능
+      + position과 size 둘 다 수치를 작성해야하는 속성이기 때문에 중간에 / 를 사용
+
+  > 1_5_sprite {sprite Background}
+    - 일반적인 수학 좌표계
+      + X축: 왼쪽 오른쪽 증가
+      + Y축: 아래에서 위로 증가 
+    - 웹 좌표계
+      + X축: 왼쪽 오른쪽 증가
+      + Y축: 위에서 아래로 증가 
+    => 역사적인 화면 설계 방식과 랜더링 방식 때문
+
+  > 2_list {list bullet style}
+    - 동일한 불릿 스타일을 지정할 거면 li에 적용하는 것이 아닌 ul에 적용하는 것이 더 효율적 
+    - ul <list-style>
+      + <circle>: outlined Circle bullet
+      + <disc>: fill Circle bullet
+      + <square>: square bullet
+    - ol <list-style> (개인정보 취급 방침, 이용약관, 쿠키 설정 동의 등 법률적인 page 내에서 사용)
+      + <decimal>: 숫자
+      + <lower-alpha>: 소문자 영어
+      + <upper-alpha>: 대문자 영어
+      + <lower-roman>: 소문자 로마자
+      + <upper-roman>: 대문자 로마자
+
+  > 3_border {border style}
+    - <border>: 선. padding과 같이 요소의 size에 영향을 줌 
+    - border 속성별 분리
+      + 웹에서 방향은 정시계 방향: top right bottom left / 상 좌우 하 / 상하 좌우 / 상하좌우   
+      + <border-width>: 1px 1px 1px 1px;
+      + <border-style>: solid dotted dashed double;
+    - border 방향별 분리
+      + border-top/right/bottom/left: 1px solid red;
+    - border 속성 
+      + <groove>: 음영이 안 쪽인 테두리를 지닌 박스
+      + <ridge>: 음영이 바깥 쪽인 테두리를 지닌 박스
+      + <inset>: 안으로 들어가 보이는 테두리를 지닌 박스
+      + <outset>: 밖으로 튀어나와 보이는 테두리를 지닌 박스
+    - <border-radius>: 모서리를 둥글게 만듦. 좌측 상단으로부터 시계방향
+
+  > 4_event {CSS Event's}
+    - <event>: 웹 페이지에서 사용자의 행동이나 시스템의 변화를 말함
+      + 마우스클 클릭하거나 시스템을 눌렀을 때, 화면을 스크롤했을 때 발생하는 상호작용
+      + <link>: href attr이 부여된 상태
+        + js를 이용하면 일반 tag에도 href를 부여할 수 있음. 그래서 event Selector라고 함
+      + <visited>: 방문한 적이 있는 상태
+      + <hover>: 마우스 커서가 올라가 있는 상태(가장 많이 사용)
+      + <active>: 마우스 클릭 상태
+      + <focus>: 초점이 맞춰진 상태(click된 상태가 아닌 초점이 맞춰진 상태임. 구분할 것)
+    - <accent-color>: checkbox, radio 등 form 요소에서 강조되는 색상을 지정할 수 있음
+    - 가급적 outline은 비수정을 권장. 색약, 색맹들을 위해 제공되는 기능
+
+[step_4]
+
+  > 1_spacing {간격 제어 tag}
+    - <margin>: 동위 선상에 있는 태그들이 남는 공간을 정하는 개념
+      + 계층이 동일해야 함. 구조에 답이 있으니 구조를 잘 짜야함
+      + margin은 상쇄되는 특성이 있음. 그래서 margin-left/bottom을 많이 사용
+      + margin: 0 auto; > 좌/우 공통 배분 (부모너비 - 대상너비)/2 
+      + margin-left: auto; > 좌 자동배분 (부모너비 - 대상너비)
+      > height에 적용하려면 html, body에게 기준을 정해줘야 함
+    - <padding>: 부모가 자손을 압박하는 용도로 사용(입는 패딩과 같이 덩치가 커짐)
+    - 두 개의 큰 차이점은 요소의 부피가 커지느냐(padding) 아니냐(margin)
+    - margin과 padding은 상쇄되지 않으며, 만날 일도 없음
+    - <box-sizing>: border는 % 연산이 불가능. box-sizing 처리를 해주면 원활하게 계산 가능
+      + <border-box>: 내부합산. 기존에 정해둔 너비에 영향을 주지 않고 속성값이 안으로 들어가게 함
+      + <content-box>: 외부합산. default값
+    - content > padding(size 영향o) > border(영향o) > margin(영향x) 순서
+
+  > 2_float {float}
+    - <float>: float는 width: 100%; 가 주어졌을 때 레이아웃이 예측 가능하고 가장 안정적 (step_4/2_3_floatLayout3)
+      + float를 사용했을 때 적용이 안 된다면 의심할 건 display밖에 없음.
+    - <flaot>의 등장 배경
+      + HTML과 CSS가 처음 등장했을 때 요소들은 기본적으로 위에서 아래로 쌓임
+      + 하지만 웹 페이지를 디자인 할 때 이미지, 텍스트를 자연스럽게 배치하고자 하는 니즈가 많아서 float가 도입되었으나, 이후 레이아웃을 만드는 데도 사용되어 문제 발생 
+      + 문제점은?
+        + 기존 block을 무효화. float된 요소만 포함하는 부모는 높이가 0이 되어버림 :afterCancle로 해결 가능
+        + 좌, 우 요소의 높이가 다를 경우 레이아웃이 무너짐
+    - <grid>: 전체 페이지의 레이아웃을 행과 열로 구성 (2차원 정렬)
+      + float의 단점인 높이가 다를 경우 레이아웃이 무너지는 현상을 효율적으로 관리
+      + 단점: 요소가 좌, 우로 유동적으로 변하는 상황에서 적응성이 낮음
+    - <flexbox>: 요소들을 가로 또는 세로로 정렬(1차원 정렬)
+      + float와 grid의 단점뿐만 아니라 기존 공간 배치의 어려움을 쉽게 바꿔냄
+      + 단점: 세부 설정 및 조정의 난이도가 높음 
+    - <afterCanceler>: :after{content: ''; display: block; clear: both;}
+      + 일반적으로 부모 요소는 자식 요소의 높이를 자동으로 계산해서 감싸줌. 그러나 요소에 float 적용 시 해당 요소는 부모의 일반적인 흐름에서 빠져버림. 즉, 부모는 float된 자식의 존재를 모르는 것처럼 행동 
+      + float로 인해 무너지는 부모 공간을 복원하기 위함 (적용 대상: float들의 부모)
+      + <after>: 후위 선택자. 요소의 마지막 부분에 가상의 요소를 추가하는 기능
+      + <content>: 지정된 대상에 요소를 넣어주는 기능
+      + <display>: block 지정. width를 100% 부여하겠다는 것 (:after는 lnline 요소이기 때문)
+      + <clear>: float Counter. float된 요소의 다음 요소는 더 이상 흐르지 않고 아래로 내려보내는 기능 
+        + 부모 요소가 아닌 원하는 요소에 clear: left/right; 를 주게 되면 해당 요소는 끌려가지 않을지언정 근본적 문제인 부모 요소가 높이를 인식하지 못하는 문제는 해결되지 않음 
+
+  > 2_1_floatLayout1 {floatLayout1}
+    - 연습할 때는 background-color를 넣고 연습할 것
+    - 항상 수치적 근거를 찾을 것
+
+  > 2_2_floatLayout2 {floatLayout2}
+    - 코드를 작성할 때 콘텐츠의 길이에 따른 변화 여부를 고려해야함 
+    - px, 또는 % 등의 값을 부여할 때는 5배수 관계로 작성하는 게 best. 차선은 짝수로 부여하여 나머지가 0이 되는 상항을 만드는 게 유리
+    - 줄바꿈으로 인해 line-height를 사용할 수 없을 때는 padding을 사용(content 크기가 달라질 수 있는 title요소에는 보통 padding을 씀)
+    - 구조화를 짤 때는 큰 요소 > 작은 요소 순서로 작성할 것
+    - div나 main을 통해 감쌀 수 있음 > 왜 감싸야 하는가?
+      - 반응형, 적응형으로 만들지 않을 때는 div로 감싸고 width: 960px; margin:0 auto를 주면 됨 
+
+  > 2_3_floatLayout3 {floatTraining01}
+    - input, img와같이 기능을 담당하는 태그들은 기본 속성이 복잡한데 나머지 아이들은 padding 아니면 margin임
+
+  > 2_4_floatLayout4 {floatTraining02}
+    - calc(16.66% - 2px): 단위가 다르고 복잡한 연산을 쉽게 도와주는 함수
+      + 연산자와 띄어쓰기 필수
+      + 함수를 많이 사용하면 브라우저에 요청이 많아져서 무리가 가니 꼭 필요할 때만 사용할 것
+    - <img>에 dispaly: block; 을 지정해줘야 함
+      + 이미지 아래 공백이 사라지고, 정렬이 쉬워지며, 레이아웃을 더 쉽게 컨트롤할 수 있음
+      + 공백 문제 해결: img는 기본적으로 lnline 요소라서 주변 텍스트와 줄을 맞추려는 경향이 있는데 inline 요소는 기본적으로 baseline을 기준으로 정렬되기 때문에 이미지 아래쪽에 원치 않는 공백이 생김
+      + 레이아웃 컨트롤이 쉬움: inline 상태일 때는 너비, 높이, 간격 등을 지정할 때 예상과 다른 결과가 나올 수 있으나 block으로 바꾸면 width: 100%;, margin: 0 auto; 적용 가능
+
+  > 3_positionBasic {position}
+    - <position>: 공간을 레이어드 하는 것(공간을 띄운다는 것)
+      + 좌표에 0이라는 값이 주어졌을 때 예측 가능하고 가장 안정적
+      + 높이 공간이 무너지지 않도록 height가 짧은 요소에게 부여할 것(긴 요소로 높이 고정) 
+      + <relative>: 상대 좌표를 기준으로 함(기존에 요소가 존재하던 자리를 기준으로 움직임)
+        + 속성을 부여한 순간에는 일반 구조와 동일하나 좌표(top right bottom left)를 부여한 순간 떠오름
+        + form > fieldset > legend를 끌어내릴 때만 사용 
+      + <absolute>: 절대 좌표를 기준으로 함(좌측 상단을 기준으로 움직임)
+        + 속성을 부여하자마자 뜨며 기존 구조가 무너지고 width가 초기화 되기 때문에 너비 필수 부여
+        + 부모에 rel, 자손에 abs를 걸면 rel 속성을 가진 부모의 좌측 상단을 기준으로 해서 움직이게 됨. 부모에 rel을 부여하지 않으면 다른 상위 rel에 붙거나 절대 좌표를 찾아감
+        + 기본 브라우저에서는 높이 지정이 어려우니 rel과 함께 사용 시 높이, 너비 지정이 가능하기 때문에 relative와 함께 쓰는 경우가 많음  
+      + <fixed>: 대상을 고정시켜줌(header에 많이 사용됨)
+        + browser scroll의 영향을 받지 않고 고정
+        + 속성을 부여하자마자 뜨며 기존 구조가 무너지고 width가 초기화 되기 때문에 너비 필수 부여
+        + 좌표를 부여하지 않으면 제자리에 고정됨(브라우저 좌측 상단을 기준으로 붙지 않음)
+        + abs는 fixed를 따를 수 있음
+      + <sticky>: 다른 속성들과같이 떠오르는 것이 아닌 상단선을 기준으로 내가 지정한 좌표에 걸리면 그때 고정
+      + <static>: position을 무효화 시키는 기능
+    - <z-index>: z축의 우선순위를 정함 (9999까지 존재)
+      + 레벨세팅: 1, 10, 100, 1000 (네 가지 이상 쓰일 일은 많지 않음)
+    - <overflow>: 넘치는 요소를 처리하는 속성(안 쓰는 게 베스트)
+      + <hidden>: 감춤
+      + <scroll>: 멀리 떨어진 요소까지 scroll 부여
+
+  > 3_1_positionControl {positionControl} 
+    - position practice
+
+  > 3_2_positionTraining {positionTraining}
+    - 수업 중 position self training 
+    - position만으로 공간을 배치하는 일은 없으나 잘 알아두어야 함
+
+  > 3_3_positionHW {position}
+    - position 및 float 과제
+    - form에는 아무런 속성을 부여하면 안 됨. 속성을 부여해야 할 때는 div로 감싸줄 것
+
+[step_5]
+
+  > 1_selector {selector - 선택자 일람}
+    - input[type='text']: type 선택 가능
+    - 주요 선택자
+      - > : 직계 선택자. 부모의 직계 요소만 특정
+        + 태그가 다채로워야 함. 동일한 태그 남발시 속성 적용이 안 됨
+      - ~ : 직계 내 범위 선택자. 부모의 직계 요소 중 a로부터 b까지의 모든 tag 특정
+      - + : 요소 뒤 특정 선택자. 범위로 지정하지 않고 a의 바로 뒤에 존재하는 태그 하나만 특정
+        + toggle과 같은 다양한 움직임이 들어간 요소에 주로 사용
+      - [^=]: 속성 앞 선택자. 속성 내 존재하는 문자들 중 앞에서부터 특정  
+      - [$=]: 속성 뒤 선택자. 속성 내 존재하는 문자들 중 뒤에서부터 특정
+      - [*=]: 전방위 선택자. 속성 내 존재하는 문자들 전체 범위 중 특정
+      - [|=]: dash/vertical bar 선택자. -(dash)를 기준으로 구분된 후 앞에서부터 특정
+      - [~=]: space bar 선택자. 띄어쓰기를 기준으로 구분된 후 앞에서부터 특정
+    - 상태 선택자: (step_3/4_event) 동일
+      - <attr>(attribute): HTML 속성. 변하지 않는 값임
+      - <prop>(property): DOM 속성. 현재 상태를 반영하기 때문에 값이 변화할 수 있음
+        + <checked>: 체크박스나 라디오 버튼이 체크되어 있는 상태 특정
+        + <enabled>: 해당 요소가 활성화 상태일 때 
+        + <disabled>: 해당 요소가 비활성화된 상태일 때  
+          + 비활성화 상태로 만들어서 사용자가 해당 요소와 값 수정, 복사, 선택 등의 어떠한 상호작용도 할 수 없게 만듦
+        + <readonly>: 텍스트 입력 필드가 읽기 전용일 때
+          + 읽기 전용 상태로 만들어서 사용자가 값을 수정할 수 없게함. 그러나 값을 복사하거나 선택하는 것은 가능
+    - 가상 선택자: 중요. 앞으로 생겨날 요소들도 미리 선택 가능 
+      - <nth-child>: 부모의 n번째 자손. 부모의 관점에서 바라보는 자손의 순서가 중요
+        + 부모의 관점에서 바라보기 때문에 ul li가 아닌 ul만 작성해도 되지만 li내 또 다른 li가 있으면 전부 선택됨(2n과 같은 식을 적을 떄)
+        + 짝수(2n): even. 짝수 최소값의 배수
+        + 홀수(2n+1): odd. 짝수 최소값의 배수 + 1 
+          + 고유 명사로 작성하게 되면 js에서 불편해지니 식으로 작성할 것
+      - <first-child>/<last-child>: 첫번째/마지막을 의미하는 고유명사
+      - Selector를 사용할 때 띄어쓰기가 계층 구조와 관계를 명확히 하기 때문에 매우 중요
+        + 띄어쓰기를 사용한 선택자: 자손 선택자로 해석되어 부모 안에 있는 모든 자식 요소 선택
+        + 띄어쓰기를 사용하지 않은 선택자: 자식 선택자로 해석되어 직접적인 자식 요소만 선택
+    - 그 외
+      - <first-letter>: 앞 글자에만 속성 적용
+      - <first-line>: 첫 줄에만 속성 적용 
+        + 이 두 가지는 잘 사용하지 않으며 last는 의미적으로도 중요하지 않기 때문에 없음
+      - <not>: 모든 선택자 중 유일하게 부정의 의미를 담은 선택자이기 때문에 중요
+        + not([type='password'],[type='submit']) 이와 같이 괄호 안에 제외시킬 대상을 넣어주면 됨
+      - <counter>: 자동으로 숫자를 매길 때 사용하는 기능 
+        + <counter-increment>: 카운터 값을 1씩 증가
+        + <counter-reset>: 카운터를 초기화(처음부터 시작)
+        + counter(이름 지정): 현재 카운터 값을 표시 
+      - <data->: 사용자 임의 속성. 원하는대로 attr을 만들 수 있는 것
+        + content: attr(data-)를 통해 불러올 수 있음  
+      - <selection>: 반응 선택자. 
+        + 웹 상에서 글이나 이미지 등의 미디어 개체를 browser에서 click+drag 등으로 선택하는 행위
+        + size, weight 등 글자의 외형은 변경이 안 됨
+        + 접근성 측면에서 좋지 않기 때문에 잘 사용하지 않음
+
+  > 1_1_floatSelectorHW {HW}
+    - 처음에 내가 작성했던 코드는 취소선이 많이 발생. 코드가 조금 길어지더라도 취소선을 발생시키지 않는 것이 우선
+    - 가상 범위 선택자 
+      + ul li:nth-child(n+2):nth-child(-n+3) > 범위가 넓어질수록 효율 증대
+
+  > 1_2_selectorTraning
+    - <min-width>/<max-width>: 최소/최대 너비 
+    - article :first-chlid => 이렇게 작성하게 되면 article 안에 있는 모든 first-child를 선택하게 됨
+      + article > :first-child 라고 작성해야 직계만 선택 가능
+    - em: 상대적인 길이 단위(유동성 단위)로 주로 글꼴 크기, 여백, 패딩 등 다양한 스타일 속성에 적용됨
+      + ex. 만약 부모 요소의 font-size가 16px라면 1em은 16px, 2em은 32px
+      + h의 margin은 em단위를 가지고 있음 
+    - 일반적으로 부정 선택자는 마지막에 작성
+
+  > 1_3_selectorTraning2
+    - 직접 실습
+
+  > 1_4_selectorLogin
+    - 웹 폰트 당기면 검사 computed 항목에서 렌더링된 것 확인할 것
+    - 핵스코드는 맨 앞자리 숫자가 중요. 앞자리 숫자가 커질수록 밝아짐
+      + 두 개 색상의 앞자리 숫자가 같다면 쓰지 않는 게 나음. 디자이너에게는 달라보일 수 있으나 사용자는 구별 불가
+    - <a>는 block으로 사용될 일이 많음 
+      + 클릭 가능한 영역 확대: inline 상태에서는 글자 부분만 클릭할 수 있지만, block으로 바꾸면 높이와 너비 지정으로 클릭 가능한 범위를 넓힐 수 있음
+    - 불필요한 코드는 작성하지 말 것
+    - 너비가 100%가 나오면 너비를 의심하지 말고 margin, padding, border를 의심해볼 것 
+    - input에게는 padding을 부여하는 것이 좋음. input 안에 커서가 붙어있으면 l과 1이 구별이 잘 안 되기 때문
+    - 팝업은 div로 작성하는 것이 좋으며 class를 지정하는 게 좋음
+      + 팝업은 보통 여러 개를 만들어야 하는 경우가 많은데 이름 지을 때 뒷단어로 통일한 후 $= 를 통해 속성을 부여하는 것이 좋음
+  
+  > 1_5_selectorTraning
+    - 이용 약관 페이지 
+    - <resize>: 주로 textarea와 같은 HTML 요소의 크기를 사용자가 직접 조절할 수 있도록 하는 CSS 속성
+      + <none>: 크기 조절 불가능(고정됨)
+      + <both>: 가로&세로 크기 조절 가능
+      + <verticla>: 세로 크기만 조절 가능 
+      + <horizontal>:가로 크기만 조절 가능
+
+  > 1_6_selectorHW 
+    - inline 요소들끼리 정렬될 때 기본 4px의 margin이 부여되며 제거 불가능
+    - margin에 음수값도 적용 가능
+
+  > 1_7_selectorfin
+    - 이번 수업의 핵심 첫 번째: 부모와 자식 요소에게 각각 relative, absolute position을 부여할 때 부모의 padding과 자식의 width에 동일한 % 값을 부여해서 화면이 줄어도 서로에게 끼치는 영향을 최소화 해야 한다는 개념 
+      + 조건
+        1. h1{text}>a{blah}
+        2. <h1> position: relative; padding-right: 50% 
+          + h1의 너비 기분 50%만큼 오른쪽에 padding 부여
+          + 즉, h1의 크기가 변하면 padding의 크기도 같이 변함
+        3. <a> position: absolute; right: 0; width: 50%
+          + a의 width는 부모의 50% 부여한 후 오른쪽에 붙임
+      + 즉, 부모의 padding과 자식의 width에 동일한 % 값을 부여해서 a가 h1의 teat를 침범하지 않도록 함
+    - 두 번째: 줄바꿈은 띄어쓰기를 기준으로 한다는 것
+      + <word-break>: text 줄바꿈 방식을 제어하는 tag
+        + <normal>: default값. 단어 단위로 줄바꿈
+        + <break-all>: 단어와 상관없이 줄바꿈 가능
+        + <keep-all>: 한글, 일본어, 중국어는 단어 단위로 줄바꿈하고, 영어는 단어가 깨지지 앟도록 유지(너비에 상관없이 한 줄로 나옴)
+    - <font-size>의 최소 사이즈 / 권장 사이즈 
+      + 영문: 9px / 10px
+      + 한글: 10px / 12px
+
+  > 1_8_selectorHW2 {1_7 복습 과제}
+    - 화면이 줄어도 요소가 떨어지지 않게 하려면 float를 이용해 배치해야하는 이유
+      + 궁극적으로는 요소들을 부모의 총 너비인 100%로 배치해야 안정적이기 때문
+      + 다른 것들을 사용해도 되지 않을까? 
+        + inline이나 inline-block 요소끼리는 기본적으로 4px의 margin을 가지고 있기 때문에 계산이 번잡해짐
+        + 또한 브라우저마다 기본 margin이 다름
+
+[step_6]
+
+  > 1_gradient
+    - <gradient>: 색의 점진적 이동
+      + <linear-gradient>: 선형
+      + <radial-gradient>: 원형 
+    - background: linear-gradient(135deg,#9b1f1f 0%, #ea7e7e 100%);
+      + 적용 광각 지정(deg), 색상의 위치(핀) 지정1, 2, 3 ... 
+      + 색상과 투명도 같이 지정
+      + 유사색 계열이 안정적이며 핀 설정이 많을수록 유연하고 부드러움
+      + 적용되지 않을 경우에 대한 대비용으로 background-color를 지정함함
+      
+  > 2_TRDuration
+    - <transition-duration> : 변환 - 지속 시간 = 변환하는 시간
+      + presetValue(ex. block, none, inline-block, inline, relative, absolute)는 적용 불가
+      + event에 transition을 부여하면 편방향 액션이 되어 부자연스러움 
+      + transition에 초만 부여하게 되면 전체 모든 속성들에 촉수를 걸어두게 되어 시스템에 과부하를 주어 CPU에 무리가 가기 때문에 열 발생
+    - color에 transition을 부여할 때
+      + transition은 값이 숫자일 때만 변화를 줄 수 있기 때문에 transition을 사용할 때는 핵스코드로 작성해야 함
+      + preset 값을 부여하게 되면 변환이 두 번 필요하기 때문에 시스템에 무리를 줌
+    - 추가 position 개념
+      + 요소에 position을 부여하면 기존의 display값이 상실되고 block처럼 작동하게 됨
+        + inline 요소에 width나 height와 같은 규격을 부여할 수 있게되므로 따로 display: block을 부여하지 않아도 됨
+      + position에 좌표를 부여할 때 동일한 방향으로 작성하는 것이 자연스러움
+    - 과제 FB 
+      + border 방향별 분리로 작성하는 것보다 속성별 분리로 작성하는 것이 더 깔끔
+
+  > 2_1_TRDelay 
+    - <transition-delay>: 지연 시간. 움직임이 시작되기 전 대기하는 시간을 설정하는 속성
+      + transition-duration은 도착 시간이 다를 뿐 시작 시간은 같음
+    - <transition-timing-function>: 애니메이션 속도의 변화 방식을 결정하는 속성
+      + 즉, 애니메이션이 시작할 때와 중간, 끝에서 속도가 어떻게 변화할지를 조절하는 역할을 하는 것
+      + cubic-bezier(x1, x2, y1, y2): 애니메이션 속도 곡선을 설정하는 함수
+        + cubic-bezier 커스텀 사이트: https://cubic-bezier.com/#.17,.67,.83,.67
+      + 지나치게 긴 duration은 loose해지기 때문에 좋지 않음
+
+  > 2_2_TRProperty 
+    - <transition-property>: 어떤 속성에 애니메이션을 줄지 특정하는 속성
+      + duration, timing-function, delay를 통해 각각의 값을 지정할 수 있으며
+      + 분리 없이 한 번에 지정하고 싶을 때는 > transition: property duration timing delay; 순서로 작성
+    - duration에 소수값을 입력할 때 0을 생략하고 .5s와 같이 입력 가능
+    
+[step_7]
+
+  > 1_anikeyframe
+    - <keyframes>: @keyframs CSS 애니메이션을 정의할 때 사용되는 규칙으로, 각 단계에서 어떤 스타일을 적용할지 정의함으로써 애니메이션의 시작, 중간, 끝의 상태를 설정할 수 있음 
+      + 이름 부여: @keyframe 이름{} 
+      + 단계: 애니메이션은 각 단계(ex.0%, 50%, 100%)로 나누어 정의할 수 있으며 각 단계에서 적용할 스타일을 각각 지정 
+      + 10000개의 keyframe을 지원하지만 과한 사용은 성능 저하로 이어지기 때문에 최대 100개 정도 사용할 수 있다고 생각하면 됨
+    - animation 속성: @keyframe 정의 후, 요소에 적용할 때 사용하는 속성
+      + animation SH: [name] [duration] [timing-function] [delay] [iteration-count]
+      + <animation-name>: 사용할 애니메이션의 이름을 지정
+      + <animation-duration>: 애니메이션이 실행될 시간
+      + <animation-timing-function>: 애니메이션의 속도 곡선을 정의
+      + <animation-delay>: 애니메이션이 시작되기 전에 지연되는 시간 
+      + <animation-iteration-count>: 애니메이션이 반복될 횟수
+      + <animation-direction>: 애니메이션의 실행 방향
+        + <normal>: default 값. 처음부터 끝까지 한 방향으로만 실행
+        + <reserve>: 애니메이션이 반대로 실행. 즉, 끝에서 시작해서 시작에서 끝까지 진행하는 것
+        + <alternate>: 애니메이션이 양방향으로 번갈아가며 실행
+          > 반복될 때마다 반대 방향으로 실행되므로, 애니메이션이 양방향으로 진행되는 효과를 줌
+        + <alternate-reverse>: 애니메이션을 처음에 반대로 시작하고, 그 후 정상적으로 번갈아가며 실행
+      + <animation-play-status>: 애니메이션이 일시 정지되거나 재개되는 상태를 설정 
+        + <running>: 애니메이션이 실행되고 있음
+        + <paused>: 애니메이션이 일시 정지됨
+      + <animation-fill-mode>: 애니메이션이 종료 후 요소의 스타일을 어떨게 유지할지 설정. 
+        + <none>: 애니메이션 종료 후 상태를 변경하지 않음
+        + <forword>: 애니메이션 종료 후 마지막 스타일을 유지
+        + <backwards>: 애니메이션 시작 전의 스타일을 지정
+        + <both>: 애니메이션 시작 전에 스타일을 적용하고, 끝난 후 마지막 스타일을 유지
+
+  > 2_transform
+    - <transform-origin>: <transform>을 적용할 때 기준점을 설정하는 속성
+    - <transform>: 요소의 모양을 변화시키며, 시각적 효과를 제공하는 데 사용
+    - 주로 위치 변경, 회전, 크기 조정, 기울기 등에 활용되며, 화면에서만 변형 효과를 적용할 뿐 원본 요소의 위치나 레이아웃을 변경하지 않음
+    - css 중 가장 많은 속성값을 가지고 있어 애니메이션을 무겁게 만드는 주 요인
+    - 함수
+      + <translate>: 요소를 x축, y축으로 이동시킴
+        + translateX(), translateY() or translate(x,y) 
+      + <scale>: 요소의 크기를 변경
+        + x와 y값은 각각 가로와 세로 크기의 비율을 지정하며, 기본값은 1
+        + 중요. 웹 특성상 z축으로 이동을 시켜도 원근감이 느껴지진 않기 때문에 scale을 이용해서 느낌을 살리는 경우가 있음
+      + <rotate>: 요소를 회전시킴
+        + 기본적으로 시계 방향으로 회전하며 각도는 단위 deg 사용
+        + rotateX(), rotateY(), rotateZ()를 통해 각각 부여 가능
+      + <skew>: 요소를 기울여서 왜곡된 모양을 만드는 것
+        + 회전과 비슷하지만 요소의 크기와 형태는 변경되지 않으며, 모양을 왜곡
+    - 변형 함수의 순서 중요(방사각)
+      + 이동 후 회전: 이동된 위치에서 회전이 이루어짐. 즉, 이동 후 회전하므로 회전 중심이 이동 후 위치로 변경됨
+      + 회전 후 이동: 회전 후 이동이 이루어짐. 즉, 회전된 상태에서 이동. 이 경우 회전된 상태의 중심을 기준으로 이동이 이루어짐
+
+  > 3_transform3D
+    - <rotate3D>: rotate3D(x,y,z,angle); 형태로 값 부여 가능
+      + 웹에서의 z축 방향은 화면을 뚫고 나오는 방향임
+      + 좌표를 전부 부여하면 대각선 형태의 축이 생긴다고 생각하면 됨
+      + ex. rotate3D(1,1,1,90deg); > (0,0,0)과 (1,1,1)을 이은 대각선 축을 기준으로 90도 회전
+    - 변환 방식으로 인한 출력 차이
+      + 개별 적용: rotateX(), rotateY(), rotateZ()
+        + 차례대로 적용되기 때문에 회전 순서에 따라 결과가 달라질 수 있음 
+        + ex. rotateX(30deg), rotateY(60deg), rotateZ(90deg);
+          1. rotateX(30deg) 적용 > Y축 방향이 기울어짐
+          2. 그 상태에서 rotateY(60deg) 적용 > 기울어진 Y축 기준으로 60도 회전
+          3. rotateZ(90deg) > 회전된 상태에서 Z축 90도 회전
+      + 한 번에 적용: rotate3D(x,y,z,angle)
+        : 하나의 축을 정해서 한 번에 회전하는 방식이기 때문에 순서 영향x
+
+  > 3_1_A
+    - <transform-style>: 부모가 3D로 변했을 때, 자식도 같이 3D가 될지 말지를 정하는 속성
+      + <flat>: default값. 부모가 3D 변환을 적용해도 자식 요소는 2D로 렌더링됨
+      + <preserve-3d>: 부모가 3D 변환을 적용하면 자식 요소도 3D 공간을 유지함
+        + 왜 필요한가? 부모가 회전할 때 자식도 입체적으로 회전하는 효과를 가짐.
+
+  > 3_2_triangle
+    - A 응용 실습
+
+  > 3_3_HW
+    - 3D HW
+
+  > 3_4_cube
+    - <perspective>: 3D 변환을 적용할 때 깊이감을 주는 속성. 부모 요소에게 설정하여 그 안에 있는 자식 요소들에 3D 효과를 적용
+      + 주로 transform 속성과 함께 사용되며, 요소가 3D로 회전하거나 기울어질 때 더 입체적인 효과를 만듦
+      + perspective: length; length는 원근 효과를 결정하는 값. 3D 공간에서의 가상의 카메라와 객체 간 거리를 의미(요소와 내 눈 사이의 거리라고 생각하면 쉬움.)
+      + 즉, 값이 작을수록 물체와 가까운 느낌을 주며 왜곡이 강해지고, 값이 클수록 물체와 멀어지는 느낌을 주며 평면적으로 보이는 효과
+      + 절대적 최대 수치는 출력 해상도에 따라 상이
+      + 대상 면적의 2배 정도가 최대 수치이며 객체 너비와 높이의 총 합을 넘어가면 의미 없어짐
+    - <div>로 감싸는 이유: 각각의 요소를 한 번에 잡아서 돌아가게 하는 것
+    
+  > 3_5_gallery
+    - 문제점 분석: 회전 기준(중심축)과 요소의 중심(center) 불일치
+      1. 초기 세팅
+        + .moveMent의 부모 section의 position: relative > 이 설정으로 .movement가 section을 기준으로 배치됨
+      2. 문제 발생
+        + moveMent의 크기가 고정되어 있지 않음 : .moveMent는 내부 콘텐츠인 .pic 요소들의 크기에 따라 크기가 결정되는데 .pic들은 전부 absolute이기 때문에 .moveMent의 실제 width와 height는 0이 됨
+        + 즉, movement는 크기 없는 투명 점처럼 존재 : 이렇게 되면  중심이 될 크기 자체가 없기 때문에 transform-origin: center; 는 말이 안 됨. 결과적으로 회전축이 눈에 보이는 중앙이 아니라 .moveMent의 좌측 상단으로 고정되는 것처럼 보임
+        + .pic들은 전부 absolute left: 0; top: 0; : .pic들은 .moveMent를 기준으로 돌기 시작하니까 시각적으로는 왼쪽이 중심축이 된 것 같은 회전이 발생. 그 상태에서 transform을 입히니
+      3. 해결 방안
+        + .pic에게-width/2 만큼의 margin-left 부여
+          + 이미지를 짝수 너비로 사용해야 하는 이유(이번 수업의 핵심이기도 함)
+      4. 추가 질문
+        Q. .moveMent에 고정된 width와 height를 부여한 후 translate를 사용하면 안 되는지 
+        A. translate는 요소에게 변형을 주는 것이 목적이기 때문에 이동의 목적으로 사용하면 안 됨. 리소스 낭비
+
+  > 250403 HW 
+    - p, a 전부에게 float를 부여하지 않은 이유: float를 걸면 컨텐츠가 흐르게 되는데 a의 컨텐츠가 짧기 때문에 p 이상으로 흐를 수 없음

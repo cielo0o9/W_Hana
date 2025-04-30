@@ -1,0 +1,15 @@
+body{
+    font-family: "Playfair Display", serif;
+}
+h1{
+    background-color: #ffa8a8;
+}
+article{
+    background-color: #ffcdb2; padding: 10px;
+}
+article h2{
+    padding: 10px; font-size: 18px; background-color: #abe2ff;
+}
+article p{
+    padding: 10px; font-size: 14px; line-height: 20px; background-color: #8bc799;
+}

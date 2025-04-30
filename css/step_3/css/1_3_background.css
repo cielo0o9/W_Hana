@@ -1,0 +1,11 @@
+body{
+    background-image: url('../images/BackgroundFront.png'), url('../images/BackgroundBack.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    /* background-attachment: fixed; */
+    background-position: bottom;
+    background-color: aquamarine;
+}
+p{
+    height:500px;
+}

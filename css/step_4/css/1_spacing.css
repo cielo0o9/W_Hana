@@ -1,0 +1,42 @@
+body{
+    margin: 0;
+}
+
+.firstDiv{
+    margin: 10px;
+    background-color: red;
+}
+
+.firstDiv article{
+    background-color: aqua; color: white;
+}
+
+.secondDiv{
+    background-color: blueviolet;
+    /* margin: 30px 30px 0; */
+    /* padding: 0 50px 30px; */
+}
+
+.secondDiv article{
+    background-color: orange;
+    /* margin-bottom: 50px; margin-left: 30px; */
+    /* 잘못된 예 > 자손에게 margin을 주는 것보다 부모에게 padding을 입히는 것이 더 올바른 방법 */
+}
+
+.centerDiv{
+    width: 300px; border: 1px solid blue; padding: 10px; margin: 0 auto;
+}
+
+.centerDiv article{
+    margin: 10px;
+}
+
+.paddingDiv{
+    width: 100%; background-color: violet; padding: 20px; 
+    /* box-sizing: border-box; */
+    /* border: 5px solid black; */
+}
+
+.paddingDiv article{
+    background-color: brown; color: white;
+}

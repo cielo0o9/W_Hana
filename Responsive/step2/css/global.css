@@ -1,0 +1,48 @@
+@media screen and (max-width:767px) and (orientation: landscape){
+  body{
+    background-color: #FFF6DA;
+  }
+  h1{
+    color: #A94A4A; font-size: 32px; line-height: 40px; text-align: center; background-color: #FFF6DA; margin-bottom: 30px;
+  }
+}
+
+@media screen and (max-width:767px) and (orientation: portrait){
+  body{
+    background-color: #FFF6DA;
+  }
+  h1{
+    color: #A94A4A; font-size: 32px; line-height: 40px; text-align: center; background-color: #FFF6DA; margin-bottom: 30px;
+  }
+}
+/* moblie code */
+
+@media screen and (min-width: 768px) and (max-width:1279px) and (orientation: landscape){
+  body{
+    background-color: #57B4BA;
+  }
+  h1{
+    color: #ffffff; font-size: 32px; line-height: 40px; text-align: center; background-color: #006A71; margin-bottom: 30px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width:1279px) and (orientation: portrait){
+  body{
+    background-color: #F2EFE7;
+  }
+  h1{
+    color: #006A71;
+    font-size: 32px; line-height: 40px; text-align: center; background-color: #F2EFE7; margin-bottom: 30px;
+  }
+}
+/* tablet code */
+
+@media screen and (min-width: 1280px){
+  body{
+    background-color: lightblue;
+  }
+  h1{
+    font-size: 32px; line-height: 40px; text-align: center; background-color: lightgreen; margin-bottom: 30px;
+  }
+}
+/*desktop code*/

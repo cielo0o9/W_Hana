@@ -1,0 +1,62 @@
+*{
+  margin: 0; padding: 0;
+}
+ul:after{
+  display: block; content: ''; clear: both; 
+}
+ul li{
+  line-height: 60px; text-align: center; list-style: none; float: left;
+}
+
+/* ul li:first-child{ 
+  background-color: red; width: 100%;
+}
+ul li:nth-child(n+2){
+  background-color: blue; color: white; width: 50%;
+}
+ul li:nth-child(n+4){
+  background-color: green; color: black; width: 33.33%;
+}
+ul li:nth-child(n+7){
+  background-color: yellow; width: 25%;
+}
+ul li:nth-child(n+11){
+  background-color: lightpink; width: 20%;
+} */
+
+/* ul li:first-child{ 
+  background-color: red; width: 100%;
+}
+ul li:nth-child(2), :nth-child(3){
+  background-color: blue; color: white; width: 50%;
+}
+ul li:nth-child(4), :nth-child(5), :nth-child(6){
+  background-color: green; color: black; width: 33.33%;
+}
+ul li:nth-child(7), :nth-child(8), :nth-child(9), :nth-child(10){
+  background-color: yellow; width: 25%;
+}
+ul li:nth-child(11), :nth-child(12),:nth-child(13), :nth-child(14), :nth-child(15){
+  background-color: lightpink; width: 20%;
+} */
+
+/* 가상 범위 선택자 */
+
+ul li:first-child{ 
+  background-color: red; width: 100%;
+}
+ul li:nth-child(n+2):nth-child(-n+3){
+  background-color: blue; color: white; width: 50%;
+}
+ul li:nth-child(n+4):nth-child(-n+6){
+  background-color: green; color: black; width: 33.33%;
+}
+ul li:nth-child(n+7):nth-child(-n+10){
+  background-color: yellow; width: 25%;
+}
+ul li:nth-child(n+11):nth-child(-n+15):not(:nth-child(12)){
+  background-color: lightpink; width: 20%;
+}
+
+/* 일반적으로 부정 선택자는 마지막에 작성 */
+

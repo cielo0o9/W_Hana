@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>form HW</title>
+</head>
+<body>
+    <div class="user">
+    <form>
+    <fieldset>
+      <legend>필수입력사항</legend>
+      <table>
+        <caption>사용자정보</caption>
+        <tbody>
+          <tr>
+            <th><label for="userID">아이디</label></th>
+            <td><input type="text" id="userID"></td>
+          </tr>
+          <tr>
+            <th><label for="userPW">비밀번호</label></th>
+            <td><input type="password" id="userPW"></td>
+          </tr>
+          <tr>
+            <th><label for="userCPW">비밀번호확인</label></th>
+            <td><input type="password" id="userCPW"></td>
+          </tr>
+          <tr>
+            <th><label for="userName">이름</label></th>
+            <td><input type="text" id="userName"></td>
+          </tr>
+          <tr>
+            <th><label for="userEmail">이메일</label></th>
+            <td>
+                <input type="email" id="userEmail"> 
+                <span>@</span>
+                <select>
+                  <option value="1">naver.com</option>
+                  <option value="2">gmail.com</option>
+                  <option value="3">daum.com</option>
+                </select>
+            </td>
+            <!-- 테이블 구조 깨지지 않게 <td> 잘 맞춰둘 것 -->
+          </tr>
+        </tbody>
+      </table>
+    </fieldset>
+    <fieldset>
+      <legend>선택입력사항</legend>
+      <table>
+        <caption>부가정보</caption>
+        <tbody>
+          <tr>
+            <th><label for="useraddress">주소</label></th>
+            <td>
+              <input type="search" id="useraddress">
+              <button type="button">주소 찾기</button>
+            </td>
+            <!-- td를 두 개로 분리해서 작성 시 input과 위치가 멀리 떨어진 상태로 출력됨 -->
+          </tr>
+          <tr>
+            <th><label for="userPN">연락처</label></th>
+            <td><input type="tel" id="userPN"></td>
+          </tr>
+          <tr>
+            <th><label for="sel_gender1">성별</label></th>
+            <td>
+              <input type="radio" name="usergender" id="sel_gender1">
+              <label for="sel_gender1">남자</label>
+              <input type="radio" name="usergender" id="sel_gender2">
+              <label for="sel_gender2">여자</label>
+            </td>
+            <!-- 
+              tr>th{성별}((td>input:radio#sel_gender$)+td>label[for="sel_gender$"])*2
+              => 이 구조로 작성시 배치 간격이 일정하지 않음
+              tr>th{성별}+td>(input:radio#sel_gender$+label[for="sel_gender$"])*2
+              => 일정함
+            -->
+          </tr>
+          <tr>
+            <th><label for="hobby_chk1">취미</label></th>
+            <td>
+              <input type="checkbox" id="hobby_chk1">
+              <label for="hobby_chk1">독서</label>
+              <input type="checkbox" id="hobby_chk2">
+              <label for="hobby_chk2">게임</label>
+              <input type="checkbox" id="hobby_chk3">
+              <label for="hobby_chk3">영화</label>
+            </td>
+            <!-- 
+              tr>th{취미}((td>input:checkbox#hobby_chk$)+td>label[for="hobby_chk$"])*3 
+              => 이 구조로 작성시 배치 간격이 일정하지 않음
+              tr>th{취미}td>(input:checkbox#hobby_chk$+label[for="hobby_chk$"])*3
+              => 일정함
+            -->
+          </tr>
+          <tr>
+            <th><label for="typedatetime">생년월일시</label></th>
+            <td><input type="datetime-local" id="typedatetime"></td>
+          </tr>
+          <tr>
+            <th><label for="typecolor">좋아하는 색상</label></th>
+            <td><input type="color" id="typecolor"></td>
+          </tr>
+          <tr>
+            <th><label for="height_cm">키(cm)</label></th>
+            <td><input type="range" id="height_cm" min="0" max="250" step="1" value="150"></td>
+          </tr>
+          <tr>
+            <th><label for="usersns">SNS</label></th>
+            <td><input type="url" id="usersns"></td>
+          </tr>
+          <tr>
+            <th><label for="commentBox">가입인사</label></th>
+            <td><textarea id="commentBox" cols="25" rows="10"></textarea></td>
+          </tr>
+        </tbody>
+      </table>
+    </fieldset>
+      <div>
+        <input type="submit" value="확인">
+        <input type="reset" value="취소">
+    </div>
+    </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+body{
+    width: 200px; margin: 200px auto;
+}
+div{
+    width: 200px; position: relative; animation-name: rotate3D; animation-iteration-count: infinite;
+    animation-duration: 3s; animation-timing-function: ease-out;
+    transform-style: preserve-3d;
+}
+@keyframes rotate3D{
+    0%{
+        transform: rotateX(90deg) rotateY(60deg); 
+    }
+    100%{
+        transform: rotateX(450deg) rotateY(60deg); 
+    }
+}
+div span{
+    width: 200px; height: 100px; position: absolute; left: 0; top: 0; opacity: 0.5;
+}
+div :nth-child(1){background-color: red; animation-name: rotate3D;}
+div :nth-child(2){background-color: green; transform: rotateY(60deg); transform-origin: left top; animation-name: rotate3D;}
+div :nth-child(3){background-color: blue; transform-origin: right top; width: 100px; transform: rotateY(-60deg); animation-name: rotate3D;}
+
+/* 
+H 구현
+body{
+    width: 200px; margin: 200px auto;
+}
+div{
+    width: 200px; position: relative; animation-name: rotate3D; animation-iteration-count: infinite;
+    animation-duration: 3s; animation-timing-function: ease-out;
+    transform-style: preserve-3d;
+}
+@keyframes rotate3D{
+    0%{
+        transform: rotateX(90deg) rotateY(60deg); 
+    }
+    100%{
+        transform: rotateX(450deg) rotateY(60deg); 
+    }
+}
+div span{
+    width: 200px; height: 100px; position: absolute; left: 0; top: 0; opacity: 0.5;
+}
+div :nth-child(1){background-color: red; animation-name: rotate3D;}
+div :nth-child(2){background-color: green; transform: translateZ(-100px); animation-name:rotate3D;}
+div :nth-child(3){background-color: blue; transform-origin: right top; width: 100px; transform: rotateY(-90deg); animation-name: rotate3D;} */
