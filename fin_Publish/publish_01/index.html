@@ -4,32 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tajam</title>
-    <!-- 변경이 가능할 수도 있는데 publisher part가 아니기 때문에 그냥 site name으로 통일해두기 -->
     <link rel="stylesheet" href="css/import.css">
 </head>
 <body id="home">
     <header>
         <div>
             <h1>
-                <a href="#home"><img src="images/logo.png" alt="welcome to Tajam"></a>
+                <a href="#home"><img src="images/logo.png" alt="welcome to tajam"></a>
             </h1>
+            <!-- origin - js처리: trigger(event handler): 이벤트를 핸들링하는 대상
+             키보드에 치는 행위 > 키 다운 > 프레스(다운이 1초 이상 유지) > 업
+             마우스 > 클릭 다운 프레스 업
+             휠 > 업 다운 무브
+             트리거 > 총에 방아쇠를 당기는 행위 동작시키는 당사자
+             햄버거가 곧 트리거 (클릭을 감지하는 아이)
+             대상이 어디있던 상관 없음, button(Trigger) 위치도 상관 없음
+             핸들러와 트리거 관계로 엮여있으면 상관 없음   
+             -->
+             <!-- pureCSS 처리: 대상, button(label)위치가 상당히 중요함 (즉, 이렇게 처리하지 말아야 함) -->
+            <!-- 뒤 선택자를 이용해서 처리하는 것 -->
+             <!-- MUI(mobilde user interface) 모바일에서만 등장하는 아이들에게는 미리 mui class를 미리 처리해둠 -->
             <nav>
+                <label for="mnav" class="mui">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+                <input type="checkbox" id="mnav" class="mui">
                 <ul>
                     <li><a href="#home" class="active">HOME</a></li>
                     <li><a href="#about">ABOUT</a></li>
-                    <li><a href="#expertise">EXPERTISE</a></li>
+                    <li><a href="#expertise">EXPERTSE</a></li>
                     <li><a href="#teams">TEAMS</a></li>
                     <li><a href="#works">WORKS</a></li>
-                    <li><a href="#peoplesay">PEOPLE SAY</a></li>
-                    <li><a href="#contact">CONTACT</a></li>
+                    <li><a href="#peoplesay">PEOPELSAY</a></li>
+                    <li><a href="#contect">CONTECT</a></li>
                 </ul>
             </nav>
             <ul>
                 <li>
                     <h2>We Are Awesome Creative Agency</h2>
-                    <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit.</p>
+                    <p>This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit.</p>
                     <a href="#" class="btn_more">LEARN MORE</a>
-                    <!-- tempLink(#) :  임시지정링크  -->
+                    <!-- trmpLink(#): 임시지정링크 -->
                 </li>
             </ul>
             <ol>
@@ -37,17 +54,22 @@
                 <li><a href="#">slide</a></li>
                 <li><a href="#">slide</a></li>
                 <li><a href="#">slide</a></li>
+                <!-- a를 이동이 아닌 동작 개념으로 사용할 때는 href를 제거하거나(표준 위배) 다른 것으로 대체 등 뒷단과 협의 -->
             </ol>
         </div>
     </header>
-    <!-- header Fin -->
+    <!-- header fin -->
 
     <figure id="about">
-        <img src="images/ci.png" alt="tajam CoporateIdendity">
+        <img src="images/ci.png" alt="tajam coporateidendity">
         <figcaption>
             <h2>OUR STORY</h2>
-            <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus</p>
-            <p>Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+            <p>
+                This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus
+            </p>
+            <p>
+                Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+            </p>
             <a href="#" class="btn_more">LEARN MORE</a>
         </figcaption>
     </figure>
@@ -56,41 +78,53 @@
         <a href="#">▷</a>
         <h2>WATCH OUR STORY</h2>
     </section>
-    <!-- about Fin -->
+    <!-- about fin -->
 
     <section id="expertise" class="expArea">
+        <!-- area 대신 공간을 표기할 때: container > box > element -->
         <h2>EXPERTISE</h2>
         <p>Lorem ipsum dolor sit amet proin gravida nibh vel velit</p>
         <hr>
         <ul>
             <li>
                 <h3>WEB DESIGN &amp; DEVELOPMENT</h3>
-                <!-- https://entitycode.com/#common-content -->
-                <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet Aenean.</p>
+                <p>
+                    This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet Aenean.
+                </p>
             </li>
             <li>
                 <h3>BRANDING IDENTITY</h3>
-                <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet Aenean.</p>
+                <p>
+                    This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet Aenean.
+                </p>
             </li>
             <li>
                 <h3>MOBILE APP</h3>
-                <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet Aenean.</p>
+                <p>
+                    This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet Aenean.
+                </p>
             </li>
             <li>
                 <h3>SEARCH ENGINE OPTIMIZATION</h3>
-                <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet Aenean.</p>
+                <p>
+                    This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet Aenean.
+                </p>
             </li>
             <li>
                 <h3>GAME DEVELOPMENT</h3>
-                <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet Aenean.</p>
+                <p>
+                    This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet Aenean.
+                </p>
             </li>
             <li>
                 <h3>MADE WITH LOVE</h3>
-                <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet Aenean.</p>
+                <p>
+                    This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet Aenean.
+                </p>
             </li>
         </ul>
-    </section>
-    <!-- expArea Fin -->
+     </section>
+     <!-- expertise fin -->
 
     <section id="teams" class="teamArea">
         <h2>MEET OUR AMAZING TEAM</h2>
@@ -98,11 +132,11 @@
         <hr>
         <ul>
             <li>
-                <figure>
+                <figure> <!-- 의도적으로 img tag를 사용하지 않고 figure의 확정구조를 깸 -->
                     <figcaption>
                         <dl>
                             <dt>SEMF UCUK</dt>
-                            <dd>CEO &amp; FOUNDER</dd>
+                            <dd>CEO&amp;FOUNDER</dd>
                         </dl>
                     </figcaption>
                 </figure>
@@ -138,15 +172,15 @@
                 </figure>
             </li>
         </ul>
-        <p>Become part of our dream team, let’s join us !</p>
+        <p>Become part of our dream team, let's join us !</p>
         <a href="#" class="btn_more">WE ARE HIRING</a>
     </section>
-    <!-- teamArea Fin -->
+    <!-- teams fin -->
 
-    <section id="works" class="worksArea">
+    <section id="works" class="worksArea"> <!-- dribbble.com 참조해보기 -->
         <h2>
             OUR WORKS
-            <a href="#" target="_blank">See All Project in dribbble &gt;</a>
+            <a href="">See All Project in dribble &gt;</a>
         </h2>
         <ul>
             <li><a href="#" target="_blank"><img src="https://placehold.co/270x200" alt="undefined"></a></li>
@@ -164,13 +198,13 @@
         </ul>
         <a href="#" class="btn_more">LOAD MORE</a>
     </section>
-    <!-- worksArea Fin -->
+    <!-- worksArea fin -->
 
     <section id="peoplesay" class="talkArea">
-        <!-- section 사용 하면안됨 - why?  = validation Passing-->
+    <!-- section 사용하면 안 됨 - validation Passing유효성 검사에서 걸림(섹션에는 title을 써야 함) -->
         <h2>quote's Section</h2>
         <p>
-            This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit.
+            This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor. aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit.
             <strong>JANE GALADRIEL</strong>
             <span>CEO TENGKUREP</span>
         </p>
@@ -179,41 +213,31 @@
             <ul>
                 <li><a href="#"><img src="images/ex_01.png" alt="thumbNailEx"></a></li>
                 <li><a href="#"><img src="images/ex_01.png" alt="thumbNailEx"></a></li>
-                <li class="active"><a href="#"><img src="images/ex_01.png" alt="thumbNailEx"></a></li>
+                <li><a href="#" class="active"><img src="images/ex_01.png" alt="thumbNailEx"></a></li>
                 <li><a href="#"><img src="images/ex_01.png" alt="thumbNailEx"></a></li>
                 <li><a href="#"><img src="images/ex_01.png" alt="thumbNailEx"></a></li>
             </ul>
             <a href="#">&gt;</a>
         </div>
+        <!-- blockquote, textarea는 폰트 적용이 번거로움 -->
     </section>
-    <!-- peopleSay Fin -->
+    <!-- peoplesay fin -->
 
     <section id="contact" class="contactArea">
-        <h2>contact US Please.</h2>
-        <!-- title... -->
-        <form>
-            <fieldset>
-                <legend>GIVE US A GOOD NEWS</legend>
-                <input type="text" placeholder="Name" title="ur name">
-                <input type="email" placeholder="Email" title="ur emailAddress">
-                <input type="text" placeholder="Subject" title="ur postSubject">
-                <textarea placeholder="Your Message" title="input ur message"></textarea>
-                <input type="submit" value="SUBMIT" class="btn_more">
-            </fieldset>
-        </form>
-        <!-- <div>
-            <h3>GIVE US A GOOD NEWS</h3>
+        <!-- section에 title이 없으면 자손의 title을 가져감 -->
+        <h2>cotact US please</h2>
             <form>
-                <input type="text" placeholder="Name" title="ur name">
-                <input type="email" placeholder="Email" title="ur emailAddress">
-                <input type="text" placeholder="Subject" title="ur postSubject">
-                <textarea placeholder="Your Message" title="input ur message"></textarea>
-                <input type="submit" value="SUBMIT">
+                <fieldset>
+                    <legend>GIVE US A GOOD NEWS</legend>
+                    <input type="text" placeholder="Name" title="ur name">
+                    <input type="email" placeholder="Email" title="ur emailZddredd">
+                    <input type="text"  placeholder="Subject"  title="ur postSubject">
+                    <textarea placeholder="Your Message"></textarea>
+                    <input type="submit" value="SUBMIT" class="btn_more">
+                </fieldset>
             </form>
-        </div> -->
         <div>
             <h3>OUR HAPPY CLIENT</h3>
-            <!-- ul>li*10>a[href="#"][target="_blank"]>img[src="images/ban_0.png"] -->
             <ul>
                 <li><a href="#" target="_blank"><img src="images/ban_01.png" alt="ZARA"></a></li>
                 <li><a href="#" target="_blank"><img src="images/ban_02.png" alt="MANGO"></a></li>
@@ -223,18 +247,17 @@
                 <li><a href="#" target="_blank"><img src="images/ban_06.png" alt="Nike"></a></li>
                 <li><a href="#" target="_blank"><img src="images/ban_07.png" alt="CONVERSE"></a></li>
                 <li><a href="#" target="_blank"><img src="images/ban_08.png" alt="PUMA"></a></li>
-                <li><a href="#" target="_blank"><img src="images/ban_09.png" alt="LEVIS"></a></li>
+                <li><a href="#" target="_blank"><img src="images/ban_09.png" alt="Levis"></a></li>
                 <li><a href="#" target="_blank"><img src="images/ban_10.png" alt="BILLABONG"></a></li>
-            </ul>
+            </ul>      
         </div>
     </section>
-    <!-- contact Fin -->
+    
     <footer>
-        <div>
+        <div> 
+            <!-- 동일한 공간 내에 있는 태그들은 구조를 통일 시켜주면 통제가 편함 -->
             <div>
-                <h2>
-                    <img src="images/logo.png" alt="Goodbye. Tajam">
-                </h2>
+                <h2><img src="images/logo.png" alt="goodbye.Tajam"></h2>
                 <p>
                     lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh elit. Duis sed odio sit amet auctror a ornare odio non mauris vitae erat in elit
                 </p>
@@ -242,11 +265,11 @@
             <div>
                 <h2>OUR STUDIO</h2>
                 <address>
+                    <!-- mapAPI 구동 : 작동을 해서 새로운 창을 열어야 할 때는 a tag 사용 / 그렇지 않을 때는 span tag -->
                     <span>
-                        <!-- 작동불필요시 a를 사용하지 않음 = mapAPI 비구동  -->
-                        Ruko cucruk, Jl. Radio luar dalem jos No.12 - 13, Kalideres - Jakarta Barat
-                        11480 - Indonesia
-                    </span>
+                        Ruko cucruk, Jl. Radio luar dalem jos <br>
+                        No.12 - 13, Kalideres - Jakarta Barat <br>
+                        11480 - Indonesia</span>
                     <span>
                         <a href="+622122243333">(+62) 21-2224 3333</a>
                     </span>
@@ -269,12 +292,12 @@
             </div>
             <div>
                 <a href="#">HELP</a>
-                <a href="#">TERMS &amp; CONDITION</a>
+                <a href="#">TERMS&amp;CONDITION</a>
                 <a href="#">PRIVACY</a>
-                <p>Copyright © 2015 - Tajem Creative</p>
+                <p>Copyright © 2013 - Tajam Creative</p>
             </div>
         </div>
     </footer>
-    <!-- footer Fin -->
+
 </body>
 </html>
