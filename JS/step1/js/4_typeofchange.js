@@ -34,6 +34,7 @@ function stringNumb(){
     var result = String(test);
     console.log("변환 후: " + typeof(result) + " = " + result);
 }
+
 function string2Numb(){
     var test = 15;
     console.log("변환 전: " + typeof(test) + " = " + test);
@@ -55,6 +56,7 @@ function bgColorRandom(){
         document.querySelector("body").style.backgroundColor="#"+bgColor;
     },1000);
 }
+
 function fixtoNumb(){
     var pi = 3.14159265359;
     console.log("변환 전: " + typeof(pi) + " = " + pi);
@@ -63,11 +65,44 @@ function fixtoNumb(){
 }
 
 // *case.6 test에 들어있는 문자를 숫자로 형변환.
-/*
-    ? Number
-    * Number(value); - 정수, 실수 구분없이 형변환.
+function numbString(){
+    var test = '300.15625';
+    console.log("변환 전: " + typeof(test) + " = " + test);
+    // var result = Number(test) + 20;
+    var result = parseFloat(test);
+    console.log("변환 후: " + typeof(result) + " = " + result);
+}
+// todo1. 변수 test에 들어있는 숫자 100을 문자형으로 변환. result로 출력(typeof 검수 필요) String을 이용한 문자형 변환
+function todo1(){
+    var test = 100;
+    var result = String(test);
+    console.log(typeof(result) + " = " + result);
+}
 
-    ? parse
-    * 1. parseInt(value); - 정수형변환
-    * 2. parseFloat(value); - 실수형변환
-*/
+// todo2. toString을 이용한 문자형변환
+function todo2(){
+    var test = 100;
+    var result = test.toString();
+    console.log(typeof(result) + " = " + result);
+}
+
+// 암시적 형변환을 이용한 문자형변환
+function todo3(){
+    var test = 100;
+    var result = "" + test; // 생각보다 많이 쓰는 방법
+    console.log(typeof(result) + " = " + result);
+}
+
+//  문자형을 숫자로 변환. 마찬가지로 typeof 검수 필요
+function todo4(){
+    var test = '100.51';
+    var result = parseFloat(test) + 150 + parseInt("20");
+    console.log(typeof(result) + " = " + result);
+}
+
+// 위 상황을 number 전역함수로 대체한다면?
+function todo5(){
+    var test = '100.51';
+    var result = Number(test) + 150 + Number("20");
+    console.log(typeof(result) + " = " + result);
+}
