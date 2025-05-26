@@ -151,27 +151,40 @@ function lotto(){
 
 // todo. 2 다음 코드를 실행해보고 결과를 확인한 후 간소화 하시오. (? if x 1, else x 1로)
 function btnMouseEx(){
-    var clickBtn = window.prompt("누르실 마우스 버튼을 입력하세요 (왼쪽,오른쪽,가운데)");
-    if(clickBtn=="오른쪽"){
-        console.log("오른쪽!");
-    }else if(clickBtn=="왼쪽"){
-        console.log("왼쪽!");
-    }else if(clickBtn=="가운데"){
-        console.log("가운데!");
+    var clickBtn = prompt("누르실 마우스 버튼을 입력하세요 (왼쪽,오른쪽,가운데)");
+    if(clickBtn=="오른쪽" || clickBtn=="왼쪽" || clickBtn=="가운데"){
+        console.log(clickBtn + "!");
     }else{
-        console.log("올바른값을 입력하세요.");
+        console.log("올바른 값을 입력하세요.");
     }
 }
 
+
 // todo. 3 다음 세 과목의 점수를 prompt로 입력 받고 평균을 구한 뒤(소수점은 두자리에끊어야함) 수,우,미,양,가 등급으로 나누어 출력해라.
 function avgScore(){
-    var koreanScore = prompt("국어 점수를 입력하세요.");
-    var englishScore = prompt("영어 점수를 입력하세요.");
-    var mathScore = prompt("수학 점수를 입력하세요.");
-    var avg = koreanScore + englishScore + mathScore;
-    // 수 - 90점 이상
-    // 우 - 89점 이하(min: 80)
-    // 미 - 79점 이하(min: 70)
-    // 양 - 69점 이하(min: 60)
-    // 가 - 59점 이하(min: 0)
+    var koreanScore = Number(prompt("국어 점수를 입력하세요."));
+    var englishScore = Number(prompt("영어 점수를 입력하세요."));
+    var mathScore = Number(prompt("수학 점수를 입력하세요."));
+    // if(Number(koreanScore) > 100 || Number(koreanScore) < 0 ||
+    //    Number(englishScore) > 100 || Number(englishScore) < 0 ||
+    //    Number(mathScore) > 100 || Number(mathScore) < 0){
+    //     alert("점수가 올바르지 않습니다");
+    // }else{
+
+    // }
+    var avg = ((koreanScore + englishScore + mathScore)/ 3).toFixed(2);
+    console.log(typeof(avg) + ": " + avg);
+    if(avg >= 90){
+        alert(avg + "점. 수");
+    }else if(avg >= 80){
+        alert(avg + "점. 우");
+    }else if(avg >= 70){
+        alert(avg + "점. 미");
+    }else if(avg >= 60){
+        alert(avg + "점. 양");
+    }else if(avg >= 59){
+        alert(avg + "점. 가");
+    }else{
+        alert("점수가 올바르지 않습니다");
+    }
 }
