@@ -137,8 +137,6 @@ function todoContinue(){
     }
 }
 
-// 05.26 Mon 
-
 // case.6 for에서의 break
 function forBreak(){
     for(var i = 1; i <= 10; i++){
@@ -228,11 +226,15 @@ function reverseHalfPyramid(){
 // 완성형 피라미드 그려오기(위 두 개의 상황을 응용)
 function Pyramid(){
     var star = '';
-    for(var i = 10; i >= 1; i--){
-        for(var j = 0; j < i; j++){
+    for (var i = 1; i <= 10; i++) {
+        for (var j = 10; j >= i; j--) {
+            star += '&nbsp&nbsp';
+        } // 역반복
+        for (var s = 1; s <= (2 * i - 1); s++){
             star += '*';
-        }
+        } // 정반복
         star += '<br>';
     }
     document.write(star);
 }
+// 가장 바깥쪽의 for은 가장 마지막에 출력 되어야 하는 아이
