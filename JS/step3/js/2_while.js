@@ -37,4 +37,26 @@ function whileBreak(){
     }
     document.write("최종 i = "+ i + "<br>"); //? 최종결과만 출력.
 }
-//todo. end가 입력될 때 까지 숫자를 계속해서 입력받아 입력값 합을 출력하고, prompt에는 몇번 수행 했는가에 대한 "x 번째 입력" 이 표시되어어야함. 
+
+//todo. end가 입력될 때까지 숫자를 계속해서 입력받아 입력값 합을 출력하고, prompt에는 몇번 수행 했는가에 대한 "x 번째 입력" 이 표시되어야함. 
+function inputprompt(){
+    var sumValue = 0;
+    var count = 1;
+    while(true){
+        var inputprompt = prompt("숫자를 입력하세요(종료 > end 입력)");
+        if(inputprompt == end){
+            console.log('현재까지의 총 합: ' + sumValue);
+            break;
+        }else{
+            sumValue += inputprompt;
+            console.log(count + "번째 입력 " +  + " 후 누적 합: " + sumValue);
+        }
+        count++;
+    }
+}
+
+
+
+//클로저 함수 - 함수를 죽을 수 없게 하는 것
+// 스트링 제외 연산 공식
+// isNaN

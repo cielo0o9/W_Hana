@@ -1,0 +1,196 @@
+/* desktop */
+#chooseArea{
+    position: relative; padding-top: 74px;
+    background: url("../images/bg_01.png") left top / cover no-repeat;
+}
+#chooseArea > div:first-of-type{
+    position: relative; padding-left: 7%; height: 1200px; 
+    
+}
+#chooseArea > div:first-of-type img:first-child{
+    position: absolute; right: 0; top: 0;
+    display: block;
+}
+#chooseArea > div:first-of-type img:nth-child(2){
+     position: absolute; right: 248px; top: 630px;
+     display: block;
+}
+#chooseArea > div:first-of-type div:first-of-type{
+    width: 400px; height: 400px;
+    background-color: #1b1b1b; transform: rotate(45deg);
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+}
+/* #chooseArea > div:first-of-type div:first-of-type > *,
+#chooseArea > div:first-of-type div:last-of-type > *{
+    transform: rotate(-45deg); text-align: center;
+} */
+#chooseArea > div:first-of-type div:first-of-type h3{
+    font-size: 33px; font-weight: 900; color: #019edb;
+}
+#chooseArea > div:first-of-type div:first-of-type p,
+#chooseArea > div:first-of-type div:last-of-type p{
+    font-size: 15px; font-weight: 400; color: white;
+}
+#chooseArea > div:first-of-type div:last-of-type{
+    width: 300px; height: 300px;
+    background-color: #019edb; transform: rotate(45deg);
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+}
+#chooseArea > div:first-of-type div:last-of-type b{
+    font-size: 82px; font-weight: 900; color: white;
+}
+#chooseArea > div:first-of-type div:last-of-type h3{
+    font-size: 24px; font-weight: 700; color: white;
+}
+/* #chooseArea > div:first-of-type */
+
+#chooseArea > div:last-of-type{
+    padding:68px 0 74px;
+}
+#chooseArea > div:last-of-type h2{
+    margin-bottom: 10px; text-align: center;
+}
+#chooseArea > div:last-of-type span{
+    margin-bottom: 46px; text-align: center;
+}
+#chooseArea > div:last-of-type ul{
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 50px; padding: 0 16%;
+}
+#chooseArea > div:last-of-type ul li:not(li:nth-child(2)){
+    width: 260px; color: white; padding: 36px;
+    background-color: rgba(84, 84, 84, 0.5);
+}
+#chooseArea > div:last-of-type ul li b{
+    font-size: 26px; font-weight: 800; margin-bottom: 22px;
+    display: block;
+}
+#chooseArea > div:last-of-type ul li p{
+    font-size: 14px; font-weight: 400; 
+}
+#chooseArea > div:last-of-type a{
+    margin-left: 45% ;
+}
+
+
+#porfoloArea{
+    background: url('../images/bg_02.png') left top / cover no-repeat;
+}
+#porfoloArea > div:first-of-type{
+    padding-top: 420px; margin-bottom: 36px;
+}
+#porfoloArea > div:first-of-type ul{
+    max-width: 1200px; margin: 0 auto;
+    display: flex; justify-content: space-between;
+}
+#porfoloArea > div:first-of-type ul li img{
+    max-width: 530px; width: 100%;
+}
+#porfoloArea > div:first-of-type > div:last-child{
+    width: 380px; height: 380px; background-color: white;
+    transform: rotate(45deg);
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+}
+/* #porfoloArea > div:first-of-type > div:last-child >*{
+    transform: rotate(-45deg);
+} */
+#porfoloArea > div:first-of-type > div:last-child h3{
+    font-size: 40px; font-weight: 900; color: #019edb;
+}
+#porfoloArea > div:first-of-type > div:last-child p{
+    width: 250px; padding:30px 0 46px;
+}
+#porfoloArea > div:last-of-type{
+    text-align: center; color: white; padding-bottom: 114px;
+}
+#porfoloArea > div:last-of-type h2{
+    font-size: 17px; font-weight: 800; margin-bottom: 30px;
+}
+#porfoloArea > div:last-of-type p{
+    font-size: 16px; font-weight: 300; padding: 0 10%;
+}
+
+
+#workArea{
+    padding: 100px 0 150px;
+    background: url('../images/bg_03.png') left top / cover no-repeat;
+}
+#workArea h2{
+    margin-bottom: 20px;
+}
+#workArea span{
+    margin-bottom: 74px;
+}
+#workArea ul{
+    max-width: 1200px; margin: 0 auto 146px;
+    display: flex; justify-content: space-between; align-items: center;
+}
+#workArea ul li:not(li:last-child){
+    padding-right: 70px; background: url('../images/line.png') right center / 20px 124px no-repeat;
+
+}
+#workArea ul li{
+    width: 330px;
+}
+#workArea ul li figure:after{
+  content: ''; display: block; clear: both;
+}
+#workArea ul li figure img{
+    float: left; width: 22%; padding-top: 10px;
+}
+#workArea ul li figure figcaption{
+    float: left; width: 70%; margin-left: 8%;
+}
+#workArea ul li figure figcaption dl dt{
+    font-size: 17px; font-weight: 700; color: #019edb; margin-bottom: 6px;
+}
+#workArea ul li figure figcaption dl dd{
+    font-size: 16px; font-weight: 300; color: white; line-height: 24px;
+}
+/* #workArea Fin */
+ 
+#testArea{
+    padding-top: 100px;
+    background: url('../images/bg_04.png') left top / cover no-repeat;
+}
+#testArea h2{
+    margin-bottom: 12px;
+}
+#testArea span{
+    margin-bottom: 60px;
+}
+#testArea > div:last-of-type{
+    display: flex; justify-content: space-evenly; color: white;
+}
+#testArea > div:last-of-type div{
+    max-width: 330px;
+}
+#testArea > div:last-of-type img{
+    display: block; height: 124px;
+}
+#testArea > div:last-of-type div:first-child{
+    text-align: right;
+}
+#testArea > div:last-of-type div p{
+    font-size: 14px; font-weight: 400; margin-bottom: 34px;
+}
+#testArea > div:last-of-type div a{
+    margin-bottom: 115px;
+}
+#testArea > div:last-of-type div:first-child a{
+    margin-left: 62%;
+}
+/* #testArea Fin */
+
+
+#snsArea{
+    background-color: #019edb;
+}
+#snsArea > div{
+    padding: 46px 0;
+}
+#snsArea > div ul{
+    max-width: 612px; margin: 0 auto;
+    display: flex; justify-content: space-between; align-items: center;
+}
+/* #snsArea FIn */

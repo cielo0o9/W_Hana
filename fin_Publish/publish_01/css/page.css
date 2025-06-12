@@ -457,7 +457,6 @@
     }
     section.talkArea div ul li a{
         display: block; text-align: center;
-        
     }
     section.talkArea div ul li:not(.active) a{
         padding: 15px 0; transition: padding 0.35s ease-in-out;

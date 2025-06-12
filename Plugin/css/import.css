@@ -1,0 +1,5 @@
+@import url('reset.css');
+@import url('jquery.bxslider.css');
+@import url('customize.bxslider.css'); 
+/* 실제 프로젝트면 global, page.css에 넣어야 하는 내용 */
+/* 500 정상 404 찾을 수 없다 */
