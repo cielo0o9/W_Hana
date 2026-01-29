@@ -25,12 +25,12 @@
   2. 몇 열 버튼을 눌렀는지 알아내야함 
   3. 각 이미지가 배치될 좌표를 계산해야함 
   4. 각 이미지의 너비와 높이도 계산해서 바꿔주어야 함
-*/ 
+*/
 
 /*
   작동 조건 - 버튼을 클릭해야 작동함
   $('[class^="col"]').click(function(){});
-*/ 
+*/
 
 /*
   이미지의 위치와 크기를 계산하기 위해 필요한 정보
@@ -38,7 +38,7 @@
   2. 기준이 될 container의 너비 $container.width()
   3. 움직여야할(제어) 이미지들 $('#imgContainer img')
   4. 이미지의 총 개수() $images.length
-*/ 
+*/
 
 $(document).ready(function(){
     gallery();

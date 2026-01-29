@@ -200,7 +200,6 @@ ul, ol{
         margin-left: 2.56%;
     }
 }
-
 /* 질문: 처음에 desktop 때부터 작성한 방향으로 쪽 가야하는 건지. 만약 desktop에서 float를 사용했다면 쭉 그렇게 사용해야 하는지, mobile부터는 다른 방향으로 틀면 안 되는 건지
 */
 
@@ -360,8 +359,6 @@ ul, ol{
     footer div:first-child span a:nth-of-type(3){background-image: url('../images/sns_03.png');}
     footer > div:nth-child(2) p{
        max-width: 510px; width: 50%; font-size: 12px; font-style: italic; font-weight: 400; line-height: 22px; color: rgba(255, 255, 255, 0.3);
-       /* uiux에 italic의 font case가 잡혀있는지 먼저 확인해야하고 두번째는 font에 iralic이 있는지 먼저 확인해봐야함 웹 폰트에 italic이 있는 게 흔하지 않음
-       */
     }
     footer > div:nth-child(2) span{
         text-align: right; width: 50%;

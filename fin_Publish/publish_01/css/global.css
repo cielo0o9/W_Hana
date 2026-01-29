@@ -250,7 +250,7 @@ ul,ol{
 }
 /* mobile */
 
-/* 768 에서 양쪽 24px(20px)찍 하고 720px을 많이 사용함
+/* 768 에서 양쪽 24px(20px) 하고 720px을 많이 사용함
 max-width 처리시 화면이 큰 tablest에서 좌 우가 많이 비어조임
 padding %로 처리시 비어보이는 현상은 없어지는데 code가 다소 어려워짐 */
 @media screen and (min-width:768px) and (max-width: 1279px){
@@ -411,23 +411,18 @@ padding %로 처리시 비어보이는 현상은 없어지는데 code가 다소 
     }
     footer > div div:nth-of-type(3) ul li:nth-child(1) a{ 
        background-image: url('../images/ico_sns_01.png');
-        /*배경 이미지 넣기*/
     }
     footer > div div:nth-of-type(3) ul li:nth-child(2) a{ 
        background-image: url('../images/ico_sns_02.png');
-        /*배경 이미지 넣기*/
     }
     footer > div div:nth-of-type(3) ul li:nth-child(3) a{ 
        background-image: url('../images/ico_sns_03.png');
-        /*배경 이미지 넣기*/
     }
     footer > div div:nth-of-type(3) ul li:nth-child(4) a{ 
        background-image: url('../images/ico_sns_04.png');
-        /*배경 이미지 넣기*/
     }
     footer > div div:nth-of-type(3) ul li:nth-child(5) a{ 
        background-image: url('../images/ico_sns_05.png');
-        /*배경 이미지 넣기*/
     }
     footer > div div:nth-of-type(3) ul li:nth-child(6) a{ 
        background-image: url('../images/ico_sns_06.png');

@@ -196,7 +196,7 @@
     - <dialog>: 모달 창(팝업 대화 상자를 만들 떄 사용)
       + 닫기 전까지 배경과 상호작용이 불가
 
-  > 2_divSpan {div layout(web 2.0 Layout)}
+  > 2_divSpan {div layout(web 2.0 Layout)} 
     - semantic tag를 이용한 layout
 
   > 3_semantic {semantic Tag's} 
